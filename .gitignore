@@ -40,7 +40,7 @@ collect_app/.classpath
 collect_app/.project
 collect_app/.settings/
 
-# Config for the official ODK Collect build
+# Config for the official IGT Collect build
 collect_app/src/odkCollectRelease/
 
 # Files generated during CI runs

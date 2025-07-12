@@ -47,14 +47,14 @@
   <string name="search">Procurar</string>
   <string name="not_granted_permission">A atividade que você está tentando iniciar exige uma permissão que você não concedeu.</string>
   <string name="storage_runtime_permission_denied_title">Permissões de armazenamento</string>
-  <string name="storage_runtime_permission_denied_desc">Sem estas permissões, o ODK Collect não pode acessar os seus formulários ou salvar formulários enviados. Abra o aplicativo novamente quando estiver pronto para conceder estas permissões.</string>
+  <string name="storage_runtime_permission_denied_desc">Sem estas permissões, o IGT Collect não pode acessar os seus formulários ou salvar formulários enviados. Abra o aplicativo novamente quando estiver pronto para conceder estas permissões.</string>
   <string name="location_runtime_permissions_denied_title">Permissões de localização</string>
-  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. ODK Collect only captures location if the precise location permission is granted.-->
-  <string name="location_runtime_permissions_denied_desc">Sem a permissão de <b> Precise Location </b>, o ODK Collect não consegue registrar a sua localização. Por favor, tente novamente quando estiver pronto para conceder a permissão.</string>
+  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. IGT Collect only captures location if the precise location permission is granted.-->
+  <string name="location_runtime_permissions_denied_desc">Sem a permissão de <b> Precise Location </b>, o IGT Collect não consegue registrar a sua localização. Por favor, tente novamente quando estiver pronto para conceder a permissão.</string>
   <string name="camera_runtime_permission_denied_title">Permissão de acesso à câmera</string>
-  <string name="camera_runtime_permission_denied_desc">Sem esta permissão, o ODK Collect não consegue acessar sua câmera. Por favor, tente novamente quando estiver pronto a concedê-la.</string>
+  <string name="camera_runtime_permission_denied_desc">Sem esta permissão, o IGT Collect não consegue acessar sua câmera. Por favor, tente novamente quando estiver pronto a concedê-la.</string>
   <string name="record_audio_runtime_permission_denied_title">Permissão de gravar áudio</string>
-  <string name="record_audio_runtime_permission_denied_desc">Sem esta permissão, o ODK Collect não consegue acessar seu microfone. Por favor, tente novamente quando estiver pronto a concedê-la.</string>
+  <string name="record_audio_runtime_permission_denied_desc">Sem esta permissão, o IGT Collect não consegue acessar seu microfone. Por favor, tente novamente quando estiver pronto a concedê-la.</string>
   <!--##############################################
     # FILL BLANK FORM
     ##############################################-->
@@ -229,7 +229,7 @@
   <string name="record_audio_on">Gravação de áudio: ligado</string>
   <!--Displayed in the form filling menu when a form has background audio recording disabled-->
   <string name="record_audio_off">Gravação de áudio: desligado</string>
-  <string name="background_audio_permission_explanation">Esse formulário grava áudio em segundo plano. Você precisa dar permissão de acesso ao microfone para o ODK Collect. Se não permitir isso, você não poderá abrir esse formulário.</string>
+  <string name="background_audio_permission_explanation">Esse formulário grava áudio em segundo plano. Você precisa dar permissão de acesso ao microfone para o IGT Collect. Se não permitir isso, você não poderá abrir esse formulário.</string>
   <!--Text asking the user to confirm whether they want to stop recording or not (which deletes the recording file)-->
   <string name="stop_recording_confirmation">Esse formulário solicita gravação de áudio em segundo plano. Desabilitar isso irá interromper a gravação e descartar o áudio já gravado. Você tem certeza que deseja continuar?</string>
   <!--Button text for the dialog confirming whether the user wants to disable background recording-->
@@ -807,8 +807,8 @@
      # ABOUT
      ##############################################-->
   <string name="about_preferences">Sobre</string>
-  <string name="tell_your_friends">Compartilhar ODK Collect</string>
-  <string name="tell_your_friends_msg">Seus colegas ainda estão coletando dados em papel? Compartilhe o ODK Collect com eles.</string>
+  <string name="tell_your_friends">Compartilhar IGT Collect</string>
+  <string name="tell_your_friends_msg">Seus colegas ainda estão coletando dados em papel? Compartilhe o IGT Collect com eles.</string>
   <string name="leave_a_review">Deixe um opinião sua na Play Store</string>
   <string name="leave_a_review_msg">A sua opinião (possivelmente positiva) aumenta a visibilidade da App na Play Store.</string>
   <string name="odk_website">Visite o site ODK</string>
@@ -922,9 +922,9 @@
     # Form opening errors
     ##############################################-->
   <!--Error shown when a user tries to open a form that's in a different project-->
-  <string name="wrong_project_selected_for_form">Para abrir esse formulário, você deve primeiro abrir o ODK Collect e alternar para o projeto que o contém.</string>
+  <string name="wrong_project_selected_for_form">Para abrir esse formulário, você deve primeiro abrir o IGT Collect e alternar para o projeto que o contém.</string>
   <!--Error shown when a user tries to open a form when there are no projects-->
-  <string name="app_not_configured">O ODK Collect não foi configurado. Tente abrir o ODK Collect e configurá-lo;\n\nSe você clicou em um atalho, você pode precisar recriá-lo depois de configurar o ODK Collect.</string>
+  <string name="app_not_configured">O IGT Collect não foi configurado. Tente abrir o IGT Collect e configurá-lo;\n\nSe você clicou em um atalho, você pode precisar recriá-lo depois de configurar o IGT Collect.</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI mime type is unknown-->
   <string name="unrecognized_uri">URL não reconhecida: %s</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI is incorrect-->
@@ -963,11 +963,11 @@
   <string name="dev_tools">Ferramentas de desenvolvedor</string>
   <!--Option provided in the Developer tools settings to force an application crash-->
   <string name="crash_app">Forçar a quebra do aplicativo</string>
-  <!--An uncaught exception is an exception that is not handled by ODK Collect and so will force the application to close-->
+  <!--An uncaught exception is an exception that is not handled by IGT Collect and so will force the application to close-->
   <string name="crash_app_summary">Forçar uma exceção não tratada causando a quebra do aplicativo</string>
   <!--Option provided in the Developer tools settings to allow debugging filters during form entry-->
   <string name="permission_dialog_title">Sobre permissões</string>
-  <string name="permission_dialog_text">Você deverá permitir que o ODK Collect tenha acesso às configurações abaixo, selecione \"permitir\" se você deseja usá-las.</string>
+  <string name="permission_dialog_text">Você deverá permitir que o IGT Collect tenha acesso às configurações abaixo, selecione \"permitir\" se você deseja usá-las.</string>
   <string name="notifications">Notificações</string>
   <string name="required_for_notifications">Requerido para mostrar atualizações quando o formulário é baixado, atualizado e enviado.</string>
   <!--##############################################

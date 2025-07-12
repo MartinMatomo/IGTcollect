@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4cbcf0</color>
-    <color name="colorOnPrimary">#003547</color>
-    <color name="colorPrimaryContainer">#004d65</color>
-    <color name="colorOnPrimaryContainer">#bfe9ff</color>
-    <color name="colorPrimaryInverse">#006689</color>
+    <color name="colorPrimary">@color/igt_primary</color>
+    <color name="colorOnPrimary">#001F3D</color>
+    <color name="colorPrimaryContainer">@color/igt_primary_dark</color>
+    <color name="colorOnPrimaryContainer">@color/igt_primary_light</color>
+    <color name="colorPrimaryInverse">@color/igt_primary_light</color>
 
-    <color name="colorError">#ba1a1a</color>
+    <color name="colorError">@color/igt_error</color>
     <!-- <color name="colorOnError">#ffffff</color> -->
     <color name="colorErrorContainer">#ffb4ab</color>
     <color name="colorOnErrorContainer">#690005</color>
 
-    <color name="colorSurface">#001117</color>
-    <color name="colorSurfaceVariant">#40484c</color>
-    <color name="colorOnSurface">#d3e5ef</color>
-    <color name="colorOnSurfaceVariant">#c0c8cd</color>
-    <color name="colorSurfaceContainerLowest">#001117</color>
-    <color name="colorSurfaceContainerLow">#293134</color>
-    <color name="colorSurfaceContainer">#293134</color>
-    <color name="colorSurfaceContainerHigh">#293134</color>
-    <color name="colorSurfaceContainerHighest">#162f3b</color>
-    <color name="colorSurfaceInverse">#BFE9FF</color>
-    <color name="colorOnSurfaceInverse">#001F2A</color>
+    <color name="colorSurface">@color/igt_background</color>
+    <color name="colorSurfaceVariant">#2C2C2C</color>
+    <color name="colorOnSurface">@color/igt_text_primary</color>
+    <color name="colorOnSurfaceVariant">@color/igt_text_secondary</color>
+    <color name="colorSurfaceContainerLowest">@color/igt_background</color>
+    <color name="colorSurfaceContainerLow">@color/igt_surface</color>
+    <color name="colorSurfaceContainer">@color/igt_surface</color>
+    <color name="colorSurfaceContainerHigh">@color/igt_surface</color>
+    <color name="colorSurfaceContainerHighest">#252525</color>
+    <color name="colorSurfaceInverse">#E0E0E0</color>
+    <color name="colorOnSurfaceInverse">#121212</color>
 
     <bool name="lightStatusBar">false</bool>
 </resources>

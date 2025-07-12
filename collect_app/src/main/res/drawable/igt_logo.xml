@@ -1,0 +1,53 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+    <!-- Fond du logo - cercle -->
+    <path
+        android:pathData="M120,120m-100,0a100,100 0,1 1,200 0a100,100 0,1 1,-200 0"
+        android:fillColor="#1A237E"/>
+    
+    <!-- Lettres IGT -->
+    <path
+        android:pathData="M60,80L60,160"
+        android:strokeWidth="20"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"/>
+    
+    <path
+        android:pathData="M40,90L80,90"
+        android:strokeWidth="15"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"/>
+    
+    <path
+        android:pathData="M40,150L80,150"
+        android:strokeWidth="15"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"/>
+    
+    <path
+        android:pathData="M100,80L180,80"
+        android:strokeWidth="20"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"/>
+    
+    <path
+        android:pathData="M140,80L140,160"
+        android:strokeWidth="20"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"/>
+    
+    <path
+        android:pathData="M100,160L180,160"
+        android:strokeWidth="20"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"/>
+</vector> 

@@ -49,7 +49,7 @@
   <string name="storage_runtime_permission_denied_title">存儲權限</string>
   <string name="storage_runtime_permission_denied_desc">沒有這些權限，程式無法存取您的表單或填寫的資料。請授與權限後，再重新開啟此程式。</string>
   <string name="location_runtime_permissions_denied_title">位置權限</string>
-  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. ODK Collect only captures location if the precise location permission is granted.-->
+  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. IGT Collect only captures location if the precise location permission is granted.-->
   <string name="location_runtime_permissions_denied_desc">沒有 <b>精確位置</b> 權限，Collect 無法記錄您的位置。請授與權限後再重試。</string>
   <string name="camera_runtime_permission_denied_title">相機權限</string>
   <string name="camera_runtime_permission_denied_desc">沒有此權限，Collect 無法存取相機。請授與權限後再重試。</string>
@@ -813,7 +813,7 @@
      ##############################################-->
   <string name="about_preferences">關於</string>
   <string name="tell_your_friends">分享ODK Collect</string>
-  <string name="tell_your_friends_msg">您的同事還在用紙本收集資料嗎？與他們分享 ODK Collect 應用程式。</string>
+  <string name="tell_your_friends_msg">您的同事還在用紙本收集資料嗎？與他們分享 IGT Collect 應用程式。</string>
   <string name="leave_a_review">留下 Play Store 評論</string>
   <string name="leave_a_review_msg">你的評論（希望是正面的）提高了應用程式在應用商店中的知名度。</string>
   <string name="odk_website">造訪 ODK 網站</string>
@@ -927,9 +927,9 @@
     # Form opening errors
     ##############################################-->
   <!--Error shown when a user tries to open a form that's in a different project-->
-  <string name="wrong_project_selected_for_form">要打開此表單，必須首先開啟 ODK Collect 並切換到包含它的項目。</string>
+  <string name="wrong_project_selected_for_form">要打開此表單，必須首先開啟 IGT Collect 並切換到包含它的項目。</string>
   <!--Error shown when a user tries to open a form when there are no projects-->
-  <string name="app_not_configured">尚未配置 ODK Collect 。嘗試開啟 ODK Collect 進行設定。\n\n如果您點選了快捷方式，您可能需要在配置 ODK Collect 後重新建立它。</string>
+  <string name="app_not_configured">尚未配置 IGT Collect 。嘗試開啟 IGT Collect 進行設定。\n\n如果您點選了快捷方式，您可能需要在配置 IGT Collect 後重新建立它。</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI mime type is unknown-->
   <string name="unrecognized_uri">無法識別的URI: %s</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI is incorrect-->
@@ -953,7 +953,7 @@
   <!--Label for entity that has been created offline and is not on the server yet-->
   <string name="offline">離線</string>
   <!--Error message displayed when a user opens a form with an unrecognized entity version-->
-  <string name="unrecognized_entity_version">此版本的 ODK Collect 不支援此表格。請升級Collect。如果您仍然遇到此問題，請將其報告給要求您收集資料的人員。\n\nForm Entities spec version: %s</string>
+  <string name="unrecognized_entity_version">此版本的 IGT Collect 不支援此表格。請升級Collect。如果您仍然遇到此問題，請將其報告給要求您收集資料的人員。\n\nForm Entities spec version: %s</string>
   <!--##############################################
     # Crash handling
     ##############################################-->
@@ -973,11 +973,11 @@
   <string name="dev_tools">開發人員工具</string>
   <!--Option provided in the Developer tools settings to force an application crash-->
   <string name="crash_app">崩潰應用程式</string>
-  <!--An uncaught exception is an exception that is not handled by ODK Collect and so will force the application to close-->
+  <!--An uncaught exception is an exception that is not handled by IGT Collect and so will force the application to close-->
   <string name="crash_app_summary">強制執行導致應用程式崩潰的未捕獲異常</string>
   <!--Option provided in the Developer tools settings to allow debugging filters during form entry-->
   <string name="permission_dialog_title">關於權限</string>
-  <string name="permission_dialog_text">您將被要求允許 ODK Collect 存取以下功能，如果您想使用它們，請選擇「允許」。</string>
+  <string name="permission_dialog_text">您將被要求允許 IGT Collect 存取以下功能，如果您想使用它們，請選擇「允許」。</string>
   <string name="notifications">提醒事項</string>
   <string name="required_for_notifications"> 在下載、更新和傳送表單時需要顯示更新。</string>
   <!--##############################################

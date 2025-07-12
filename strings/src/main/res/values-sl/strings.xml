@@ -49,7 +49,7 @@
   <string name="storage_runtime_permission_denied_title">Dovoljenja za shranjevanje</string>
   <string name="storage_runtime_permission_denied_desc">Brez teh dovoljenj, Collect ne more dostopati do vaših obrazcev ali shraniti odgovorov. Aplikacijo znova odprite, ko ste jih pripravljeni odobriti.</string>
   <string name="location_runtime_permissions_denied_title">Dovoljenja za dostop do lokacije</string>
-  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. ODK Collect only captures location if the precise location permission is granted.-->
+  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. IGT Collect only captures location if the precise location permission is granted.-->
   <string name="location_runtime_permissions_denied_desc">Brez dovoljenja za <b> lokacijo</b> Collect ne more zabeležiti vaše lokacije. Prosimo, poskusite znova, ko boste pripravljeni, da ga odobrite.</string>
   <string name="camera_runtime_permission_denied_title">Dovoljenje za fotoaparat</string>
   <string name="camera_runtime_permission_denied_desc">Brez tega dovoljenja Collect ne more dostopati do fotoaparata. Prosimo, poskusite znova, ko ste pripravljeni odobriti.</string>
@@ -790,8 +790,8 @@
      # ABOUT
      ##############################################-->
   <string name="about_preferences">O nas</string>
-  <string name="tell_your_friends">Delite ODK Collect.</string>
-  <string name="tell_your_friends_msg">Ali vaši kolegi še vedno zbirajo podatke na papirju? Delite ODK Collect z njimi.</string>
+  <string name="tell_your_friends">Delite IGT Collect.</string>
+  <string name="tell_your_friends_msg">Ali vaši kolegi še vedno zbirajo podatke na papirju? Delite IGT Collect z njimi.</string>
   <string name="leave_a_review">Oceni aplikacijo v Play Store.</string>
   <string name="leave_a_review_msg">Vaša (upajmo pozitivna) ocena poveča vidnost aplikacije v Play Store.</string>
   <string name="odk_website">Obiščite spletno stran ODK.</string>
@@ -905,9 +905,9 @@
     # Form opening errors
     ##############################################-->
   <!--Error shown when a user tries to open a form that's in a different project-->
-  <string name="wrong_project_selected_for_form">Za odprtje tega obrazca morate najprej odpreti ODK Collect in preklopiti na projekt, ki ga vsebuje.</string>
+  <string name="wrong_project_selected_for_form">Za odprtje tega obrazca morate najprej odpreti IGT Collect in preklopiti na projekt, ki ga vsebuje.</string>
   <!--Error shown when a user tries to open a form when there are no projects-->
-  <string name="app_not_configured">ODK Collect ni bil pravilno konfiguriran. Poskusite odpreti ODK Collect in ga konfigurirati.\n\nČe ste tapnili na bližnjico, jo boste morda morali ponovno ustvariti po konfiguriranju ODK Collect.</string>
+  <string name="app_not_configured">IGT Collect ni bil pravilno konfiguriran. Poskusite odpreti IGT Collect in ga konfigurirati.\n\nČe ste tapnili na bližnjico, jo boste morda morali ponovno ustvariti po konfiguriranju IGT Collect.</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI mime type is unknown-->
   <string name="unrecognized_uri">Neprepoznan URI: %s</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI is incorrect-->
@@ -945,11 +945,11 @@
   <string name="dev_tools">Razvijalska orodja</string>
   <!--Option provided in the Developer tools settings to force an application crash-->
   <string name="crash_app">Prisilno zaustavi aplikacijo</string>
-  <!--An uncaught exception is an exception that is not handled by ODK Collect and so will force the application to close-->
+  <!--An uncaught exception is an exception that is not handled by IGT Collect and so will force the application to close-->
   <string name="crash_app_summary">Neujeta napaka zaustavila aplikacijo</string>
   <!--Option provided in the Developer tools settings to allow debugging filters during form entry-->
   <string name="permission_dialog_title">O dovoljenjih</string>
-  <string name="permission_dialog_text">Če želite dovoliti dostop ODK Collect do spodaj navedenih funkcij, izberite \"dovoli\", če jih želite uporabljati.</string>
+  <string name="permission_dialog_text">Če želite dovoliti dostop IGT Collect do spodaj navedenih funkcij, izberite \"dovoli\", če jih želite uporabljati.</string>
   <string name="notifications">Obvestila</string>
   <string name="required_for_notifications">Potrebno za prikaz posodobitev, ko se obrazci prenesejo, posodobijo in pošljejo.</string>
   <!--##############################################

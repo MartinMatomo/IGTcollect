@@ -49,7 +49,7 @@
   <string name="storage_runtime_permission_denied_title">Talletusluvat</string>
   <string name="storage_runtime_permission_denied_desc">Ilman näitä lupia Collect ei pysty lukemaan lomakemäärittelyitä tai tallentamaan vastauksia. Avaa sovellus uudestaan kun olet valmis antamaan luvat.</string>
   <string name="location_runtime_permissions_denied_title">Sijaintitiedon käyttöluvat</string>
-  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. ODK Collect only captures location if the precise location permission is granted.-->
+  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. IGT Collect only captures location if the precise location permission is granted.-->
   <string name="location_runtime_permissions_denied_desc">Ilman lupaa <b>Tarkka sijainti</b> Collect ei pysty tallentamaan sijaintiasi. Yritä uudestaan kun olet valmis sallimaan sen.</string>
   <string name="camera_runtime_permission_denied_title">Kameran käyttölupa</string>
   <string name="camera_runtime_permission_denied_desc">Ilman tätä käyttölupaa Collect ei pysty käyttämään kameraa. Ole hyvä ja yritä uudestaa kun olet valmis myöntämään sen.</string>
@@ -832,8 +832,8 @@
      # ABOUT
      ##############################################-->
   <string name="about_preferences">Lisätietoja</string>
-  <string name="tell_your_friends">Jaa ODK Collect</string>
-  <string name="tell_your_friends_msg">Keräävätkö kollegasi vielä dataa paperilla? Jaa ODK Collect heidän kanssaan.</string>
+  <string name="tell_your_friends">Jaa IGT Collect</string>
+  <string name="tell_your_friends_msg">Keräävätkö kollegasi vielä dataa paperilla? Jaa IGT Collect heidän kanssaan.</string>
   <string name="leave_a_review">Kirjoita Play Store -arvio</string>
   <string name="leave_a_review_msg">Sinun (toivottavasti myönteinen) arviosi lisää sovelluksen näkyvyyttä Play Store -kaupassa.</string>
   <string name="odk_website">Käy ODK:n verkkosivulla</string>
@@ -947,9 +947,9 @@
     # Form opening errors
     ##############################################-->
   <!--Error shown when a user tries to open a form that's in a different project-->
-  <string name="wrong_project_selected_for_form">Avataksesi tämän lomakkeen, avaa ensin ODK Collect ja vaihda projektiin johon se sisältyy.</string>
+  <string name="wrong_project_selected_for_form">Avataksesi tämän lomakkeen, avaa ensin IGT Collect ja vaihda projektiin johon se sisältyy.</string>
   <!--Error shown when a user tries to open a form when there are no projects-->
-  <string name="app_not_configured">ODK Collect ei ole konfiguroitu. Yritä avata ODK Collect ja konfiguroida sitä.\n\nJos käytit pikakuvaketta, saatat joutua luomaan sen uudelleen kun ODK Collect on konfiguroitu.</string>
+  <string name="app_not_configured">IGT Collect ei ole konfiguroitu. Yritä avata IGT Collect ja konfiguroida sitä.\n\nJos käytit pikakuvaketta, saatat joutua luomaan sen uudelleen kun IGT Collect on konfiguroitu.</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI mime type is unknown-->
   <string name="unrecognized_uri">Tunnistamaton URI: %s</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI is incorrect-->
@@ -974,7 +974,7 @@
   <!--Label for entity that has been created offline and is not on the server yet-->
   <string name="offline">Offline</string>
   <!--Error message displayed when a user opens a form with an unrecognized entity version-->
-  <string name="unrecognized_entity_version">Tätä lomaketta ei tueta tässä ODK Collect -versiossa. Ole hyvä ja päivitä Collect. Jos ongelma jatkuu, ilmoita siitä henkilölle, joka pyysi sinua keräämään dataa.\n\nForm Entities spec versio: %s</string>
+  <string name="unrecognized_entity_version">Tätä lomaketta ei tueta tässä IGT Collect -versiossa. Ole hyvä ja päivitä Collect. Jos ongelma jatkuu, ilmoita siitä henkilölle, joka pyysi sinua keräämään dataa.\n\nForm Entities spec versio: %s</string>
   <!--##############################################
     # Crash handling
     ##############################################-->
@@ -992,7 +992,7 @@
   <string name="dev_tools">Kehitystyökalut</string>
   <!--Option provided in the Developer tools settings to force an application crash-->
   <string name="crash_app">Kaada sovellus</string>
-  <!--An uncaught exception is an exception that is not handled by ODK Collect and so will force the application to close-->
+  <!--An uncaught exception is an exception that is not handled by IGT Collect and so will force the application to close-->
   <string name="crash_app_summary">Pakota havaitsematon poikkeus, joka aiheuttaa sovelluksen kaatumisen</string>
   <!--Option provided in the Developer tools settings to allow debugging filters during form entry-->
   <string name="debug_filters">Vianetsinnän suodattimet</string>

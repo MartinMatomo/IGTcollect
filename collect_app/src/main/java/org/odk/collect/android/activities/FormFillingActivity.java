@@ -1912,7 +1912,7 @@ public class FormFillingActivity extends LocalizedActivity implements AnimationL
             // it can be a normal flow for a pending activity result to restore from a savepoint
             // (the call flow handled by the above if statement). For all other use cases, the
             // user should be notified, as it means they wandered off doing other things then
-            // returned to ODK Collect and chose Edit Saved Form, but that the savepoint for
+            // returned to IGT Collect and chose Edit Saved Form, but that the savepoint for
             // that form is newer than the last saved version of their form data.
             boolean hasUsedSavepoint = task.hasUsedSavepoint();
 

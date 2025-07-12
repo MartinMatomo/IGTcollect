@@ -49,7 +49,7 @@
   <string name="storage_runtime_permission_denied_title">Povolení pro ukládání dat</string>
   <string name="storage_runtime_permission_denied_desc">Bez těchto oprávnění nelze přistupovat k formulářům nebo ukládat odpovědi. Opětovně otevřete aplikaci, až budete připraveni je udělit.</string>
   <string name="location_runtime_permissions_denied_title">Oprávnění umístění</string>
-  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. ODK Collect only captures location if the precise location permission is granted.-->
+  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. IGT Collect only captures location if the precise location permission is granted.-->
   <string name="location_runtime_permissions_denied_desc">Bez povolení <b>Přesné lokace</b>Collect nemůže zaznamenávat vaši polohu. Zkuste to znovu, až budete připraveni povolení udělit.</string>
   <string name="camera_runtime_permission_denied_title">Oprávnění k fotoaparátu</string>
   <string name="camera_runtime_permission_denied_desc">Bez tohoto povolení nelze přistupovat k fotoaparátu. Zkuste to prosím znovu, když jste připraveni jej udělit.</string>
@@ -827,8 +827,8 @@
      # ABOUT
      ##############################################-->
   <string name="about_preferences">Více o….</string>
-  <string name="tell_your_friends">Sdílet ODK Collect</string>
-  <string name="tell_your_friends_msg">Shromažďují vaši kolegové data jen na papíře? Sdílejte s nimi ODK Collect.</string>
+  <string name="tell_your_friends">Sdílet IGT Collect</string>
+  <string name="tell_your_friends_msg">Shromažďují vaši kolegové data jen na papíře? Sdílejte s nimi IGT Collect.</string>
   <string name="leave_a_review">Nechte recenzi v Play Store</string>
   <string name="leave_a_review_msg">Vaše recenze (snad pozitivní) zvyšuje viditelnost aplikace v Play Store.</string>
   <string name="odk_website">Navštivte web ODK</string>
@@ -942,9 +942,9 @@
     # Form opening errors
     ##############################################-->
   <!--Error shown when a user tries to open a form that's in a different project-->
-  <string name="wrong_project_selected_for_form">Chcete-li otevřít tento formulář, musíte nejprve otevřít ODK Collect a přepnout na projekt, který jej obsahuje.</string>
+  <string name="wrong_project_selected_for_form">Chcete-li otevřít tento formulář, musíte nejprve otevřít IGT Collect a přepnout na projekt, který jej obsahuje.</string>
   <!--Error shown when a user tries to open a form when there are no projects-->
-  <string name="app_not_configured">ODK Collect nebyl nakonfigurován. Zkuste otevřít ODK Collect a nakonfigurovat jej.\n\nPokud jste klepli na zástupce, možná jej budete muset po konfiguraci ODK Collect znovu vytvořit.</string>
+  <string name="app_not_configured">IGT Collect nebyl nakonfigurován. Zkuste otevřít IGT Collect a nakonfigurovat jej.\n\nPokud jste klepli na zástupce, možná jej budete muset po konfiguraci IGT Collect znovu vytvořit.</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI mime type is unknown-->
   <string name="unrecognized_uri">Nerozpoznaný identifikátor URI: %s</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI is incorrect-->
@@ -969,7 +969,7 @@
   <!--Label for entity that has been created offline and is not on the server yet-->
   <string name="offline">Offline</string>
   <!--Error message displayed when a user opens a form with an unrecognized entity version-->
-  <string name="unrecognized_entity_version">Tento formulář není v této verzi ODK Collect podporován. Upgradujte prosím aplikaci Collect. Pokud máte tento problém i nadále, nahlaste ho osobě, která vás požádala o sběr dat. \n\nVerze specifikace formulářových entit: %s</string>
+  <string name="unrecognized_entity_version">Tento formulář není v této verzi IGT Collect podporován. Upgradujte prosím aplikaci Collect. Pokud máte tento problém i nadále, nahlaste ho osobě, která vás požádala o sběr dat. \n\nVerze specifikace formulářových entit: %s</string>
   <!--##############################################
     # Crash handling
     ##############################################-->
@@ -987,11 +987,11 @@
   <string name="dev_tools">Vývojářské nástroje</string>
   <!--Option provided in the Developer tools settings to force an application crash-->
   <string name="crash_app">Aplikace Crash</string>
-  <!--An uncaught exception is an exception that is not handled by ODK Collect and so will force the application to close-->
+  <!--An uncaught exception is an exception that is not handled by IGT Collect and so will force the application to close-->
   <string name="crash_app_summary">Vynucení nezachycené výjimky, která způsobí pád aplikace</string>
   <!--Option provided in the Developer tools settings to allow debugging filters during form entry-->
   <string name="permission_dialog_title">O oprávněních</string>
-  <string name="permission_dialog_text">Budete požádáni o povolení přístupu ODK Collect k níže uvedeným funkcím, pokud je chcete používat, vyberte možnost \"povolit\".</string>
+  <string name="permission_dialog_text">Budete požádáni o povolení přístupu IGT Collect k níže uvedeným funkcím, pokud je chcete používat, vyberte možnost \"povolit\".</string>
   <string name="notifications">Oznámení</string>
   <string name="required_for_notifications">Vyžaduje se pro zobrazení aktualizací při stahování, aktualizaci a odesílání formulářů.</string>
   <!--##############################################

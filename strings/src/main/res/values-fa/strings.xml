@@ -49,7 +49,7 @@
   <string name="storage_runtime_permission_denied_title">مجوزهای برای ذخیره سازی</string>
   <string name="storage_runtime_permission_denied_desc">بدون مجوزها، مجموعه نمی‌تواند به فرم‌های شما دسترسی داشته باشد یا پاسخ‌ها را ذخیره کند. زمانی که برای اعطای برنامه آماده شدید، دوباره آن را باز کنید.</string>
   <string name="location_runtime_permissions_denied_title">دسترسی لوکیشن</string>
-  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. ODK Collect only captures location if the precise location permission is granted.-->
+  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. IGT Collect only captures location if the precise location permission is granted.-->
   <string name="location_runtime_permissions_denied_desc">بدون اجازه <b>Precise Location</b> نمی تواند موقعیت مکانی شما را ضبط کند. لطفاً هنگامی که  اجازه دسترسی آن فعال شد، دوباره امتحان کنید.</string>
   <string name="camera_runtime_permission_denied_title">دسترسی دوربین</string>
   <string name="camera_runtime_permission_denied_desc">بدون این مجوز Collect نمی تواند به دوربین دسترسی داشته باشد. لطفاً هنگامی که آماده اعطای آن هستید دوباره امتحان کنید.</string>
@@ -744,8 +744,8 @@
      # ABOUT
      ##############################################-->
   <string name="about_preferences">در باره</string>
-  <string name="tell_your_friends">ODK Collect را به اشتراک بگذارید</string>
-  <string name="tell_your_friends_msg">آیا همکاران شما هنوز در حال جمع آوری معلومات بر روی کاغذ هستند؟ ODK Collect را با آنها به اشتراک بگذارید.</string>
+  <string name="tell_your_friends">IGT Collect را به اشتراک بگذارید</string>
+  <string name="tell_your_friends_msg">آیا همکاران شما هنوز در حال جمع آوری معلومات بر روی کاغذ هستند؟ IGT Collect را با آنها به اشتراک بگذارید.</string>
   <string name="leave_a_review">نظریه خود را راجع به Play Store بنویسید</string>
   <string name="leave_a_review_msg"> (امیدوارم) بررسی ما باعث افزایش دید برنامه در  Play Store می شود.</string>
   <string name="odk_website">به وبسایت ODK مراجعه کنید</string>
@@ -859,7 +859,7 @@
     # Form opening errors
     ##############################################-->
   <!--Error shown when a user tries to open a form that's in a different project-->
-  <string name="wrong_project_selected_for_form">برای باز کردن این فرم، ابتدا باید ODK Collect را باز کنید و به پروژه ای که مربوط آن است بروید.</string>
+  <string name="wrong_project_selected_for_form">برای باز کردن این فرم، ابتدا باید IGT Collect را باز کنید و به پروژه ای که مربوط آن است بروید.</string>
   <!--Error shown when a user tries to open a form when there are no projects-->
   <string name="app_not_configured">او دی کی کلیکت تنظیم نگردیده است، کوشش کنید تا او دی کی کلیکت را باز کنید و آنرا تنظیم کنید. اگر شما بالای میانبر فشار وارد کنید، پس از تنظیم کردن ODK collect شما نیاز پیدا خواهد کرد تا انرا دوباره ایجاد کنید.</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI mime type is unknown-->
@@ -898,11 +898,11 @@
   <string name="dev_tools">توسعه ابزارها</string>
   <!--Option provided in the Developer tools settings to force an application crash-->
   <string name="crash_app">از کار افتاد app</string>
-  <!--An uncaught exception is an exception that is not handled by ODK Collect and so will force the application to close-->
+  <!--An uncaught exception is an exception that is not handled by IGT Collect and so will force the application to close-->
   <string name="crash_app_summary">اجبار یک استثناء کشف نشده که باعث از کار افتادن برنامه می شود</string>
   <!--Option provided in the Developer tools settings to allow debugging filters during form entry-->
   <string name="permission_dialog_title">درباره محدودیت ها</string>
-  <string name="permission_dialog_text">از شما خواسته می شود که به ODK Collect اجازه دسترسی به ویژگی های زیر را بدهید، اگر می خواهید از آنها استفاده کنید، \"اجازه\" را انتخاب کنید.</string>
+  <string name="permission_dialog_text">از شما خواسته می شود که به IGT Collect اجازه دسترسی به ویژگی های زیر را بدهید، اگر می خواهید از آنها استفاده کنید، \"اجازه\" را انتخاب کنید.</string>
   <string name="notifications">اعلان ها</string>
   <string name="required_for_notifications">برای نمایش به‌روزرسانی‌ها هنگام بارگیری، به‌روزرسانی و ارسال فرم‌ها ضروری است.</string>
   <!--##############################################

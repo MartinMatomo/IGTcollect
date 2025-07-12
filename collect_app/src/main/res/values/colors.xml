@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3e9fcc</color>
+    <color name="colorPrimary">@color/igt_primary</color>
     <color name="colorOnPrimary">#ffffff</color>
-    <color name="colorPrimaryContainer">#bfe9ff</color>
-    <color name="colorOnPrimaryContainer">#001f2a</color>
-    <color name="colorPrimaryInverse">#6dd2ff</color>
+    <color name="colorPrimaryContainer">#d0d4ff</color>
+    <color name="colorOnPrimaryContainer">@color/igt_primary_dark</color>
+    <color name="colorPrimaryInverse">#b1c5ff</color>
 
-    <color name="colorError">#ba1a1a</color>
+    <color name="colorError">@color/igt_error</color>
     <!-- <color name="colorOnError">#ffffff</color> -->
     <color name="colorErrorContainer">#ffdad6</color>
     <color name="colorOnErrorContainer">#410002</color>
 
-    <color name="colorSurface">#ffffff</color>
-    <color name="colorSurfaceVariant">#dce3e9</color>
-    <color name="colorOnSurface">#001f2a</color>
-    <color name="colorOnSurfaceVariant">#40484c</color>
+    <color name="colorSurface">@color/igt_surface</color>
+    <color name="colorSurfaceVariant">#e1e2ec</color>
+    <color name="colorOnSurface">@color/igt_text_primary</color>
+    <color name="colorOnSurfaceVariant">@color/igt_text_secondary</color>
     <color name="colorSurfaceContainerLowest">#ffffff</color>
-    <color name="colorSurfaceContainerLow">#f7f7f7</color>
-    <color name="colorSurfaceContainer">#f7f7f7</color>
-    <color name="colorSurfaceContainerHigh">#f7f7f7</color>
+    <color name="colorSurfaceContainerLow">@color/igt_background</color>
+    <color name="colorSurfaceContainer">@color/igt_background</color>
+    <color name="colorSurfaceContainerHigh">@color/igt_background</color>
     <color name="colorSurfaceContainerHighest">#f2f2f2</color>
-    <color name="colorSurfaceInverse">#003547</color>
+    <color name="colorSurfaceInverse">#2b3042</color>
     <color name="colorOnSurfaceInverse">#E1F4FF</color>
 
     <bool name="lightStatusBar">true</bool>

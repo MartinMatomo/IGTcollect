@@ -49,7 +49,7 @@
   <string name="storage_runtime_permission_denied_title">سٹوریج پرمیشن</string>
   <string name="storage_runtime_permission_denied_desc">اس اجازت کے بغیر کولیکٹ آپ کے فارم تک رسائی حاصل نہیں کرسکتایا جواب محفوظ نہیں کر سکتا جب آپ پرمیشن دینے کے لئے تیار ہو تو ایپلکیشن دوبارہ کھولیں.</string>
   <string name="location_runtime_permissions_denied_title">لوکیشن کی اجازت</string>
-  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. ODK Collect only captures location if the precise location permission is granted.-->
+  <!--Starting in Android 12, Android makes it possible to give precise or approximate location permissions to an application. IGT Collect only captures location if the precise location permission is granted.-->
   <string name="location_runtime_permissions_denied_desc">اس <b>مخصوص</b> اجازت کے بغیر کولیکٹ آپ کی لوکیشن ریکارڈ نہیں کرسکتا۔ برائےمہربانی دوبارہ کوشش کریں جب آپ پرمیشن دینے کے لئے تیار ہو </string>
   <string name="camera_runtime_permission_denied_title">کمیرہ کی اجازت</string>
   <string name="camera_runtime_permission_denied_desc">اس اجازت کے بغیر کولیکٹ کو کیمرے تک رسائی نہیں مل سکتی. برائےمہربانی دوبارہ کوشش کریں جب آپ  پرمیشن دینے کے لئے تیار ہو</string>
@@ -910,9 +910,9 @@ Constraint processing</string>
     # Form opening errors
     ##############################################-->
   <!--Error shown when a user tries to open a form that's in a different project-->
-  <string name="wrong_project_selected_for_form">اس فارم کو کھولنے کے لئے پہلے ODK Collect کھولیں اور اس پراجیکٹ کا انتخاب کریں جس میں یہ موجود ہے۔</string>
+  <string name="wrong_project_selected_for_form">اس فارم کو کھولنے کے لئے پہلے IGT Collect کھولیں اور اس پراجیکٹ کا انتخاب کریں جس میں یہ موجود ہے۔</string>
   <!--Error shown when a user tries to open a form when there are no projects-->
-  <string name="app_not_configured">ODK Collect ابھی تک Configure نہیں کیا گیا۔ براہ مہربانی ODK Collect کو کھولیں اور سیٹنگ کریں۔
+  <string name="app_not_configured">IGT Collect ابھی تک Configure نہیں کیا گیا۔ براہ مہربانی IGT Collect کو کھولیں اور سیٹنگ کریں۔
 
 اگر آپ نے کسی Shortcut پہ کلک کیا ہے، تو آپ کوODK Collect سیٹ کرنے کی بعد اس کو دوبارہ بنانا پڑے گا۔</string>
   <!--Displayed when form filling is attempted to be launched by intent but the intent URI mime type is unknown-->
@@ -951,11 +951,11 @@ Constraint processing</string>
   <string name="dev_tools">ڈویلیپرز کے ٹولز</string>
   <!--Option provided in the Developer tools settings to force an application crash-->
   <string name="crash_app">Crash app</string>
-  <!--An uncaught exception is an exception that is not handled by ODK Collect and so will force the application to close-->
+  <!--An uncaught exception is an exception that is not handled by IGT Collect and so will force the application to close-->
   <string name="crash_app_summary">Force an uncaught exception causing the app to crash</string>
   <!--Option provided in the Developer tools settings to allow debugging filters during form entry-->
   <string name="permission_dialog_title">اجازت کی تفصیل</string>
-  <string name="permission_dialog_text">آپ سے پوچھا جائے گا کہ ODK Collect نیچے دی گئی چیزوں کو استعمال کر سکتا ہے۔ اگر آپ مطمئن ہیں تو Allow کا بٹن دبایئں۔</string>
+  <string name="permission_dialog_text">آپ سے پوچھا جائے گا کہ IGT Collect نیچے دی گئی چیزوں کو استعمال کر سکتا ہے۔ اگر آپ مطمئن ہیں تو Allow کا بٹن دبایئں۔</string>
   <string name="notifications">نوٹس</string>
   <string name="required_for_notifications">Required for showing updates when forms are downloaded, updated and sent.</string>
   <!--##############################################

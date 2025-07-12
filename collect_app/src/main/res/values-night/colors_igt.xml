@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Couleurs principales pour l'Inspection Générale du Travail - Mode sombre -->
+    <color name="igt_primary">#536DFE</color>            <!-- Bleu plus clair pour le mode sombre -->
+    <color name="igt_primary_dark">#3D5AFE</color>       <!-- Bleu moyen pour le mode sombre -->
+    <color name="igt_primary_light">#8C9EFF</color>      <!-- Bleu très clair pour le mode sombre -->
+    <color name="igt_accent">#FF5252</color>             <!-- Rouge plus vif pour le mode sombre -->
+    <color name="igt_secondary">#FF6E40</color>          <!-- Orange plus vif pour le mode sombre -->
+    
+    <!-- Couleurs pour le texte et les fonds -->
+    <color name="igt_text_primary">#E0E0E0</color>       <!-- Texte principal plus clair -->
+    <color name="igt_text_secondary">#B0B0B0</color>     <!-- Texte secondaire plus clair -->
+    <color name="igt_background">#121212</color>         <!-- Fond d'écran sombre -->
+    <color name="igt_surface">#1E1E1E</color>            <!-- Surface des cartes sombre -->
+    
+    <!-- Couleurs d'état -->
+    <color name="igt_success">#69F0AE</color>            <!-- Vert plus vif pour le mode sombre -->
+    <color name="igt_warning">#FFD740</color>            <!-- Orange plus vif pour le mode sombre -->
+    <color name="igt_error">#FF5252</color>              <!-- Rouge plus vif pour le mode sombre -->
+</resources> 

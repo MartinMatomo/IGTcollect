@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Couleurs principales pour l'Inspection Générale du Travail -->
+    <color name="igt_primary">#1A237E</color>            <!-- Bleu foncé -->
+    <color name="igt_primary_dark">#0D1642</color>       <!-- Bleu très foncé -->
+    <color name="igt_primary_light">#534BAE</color>      <!-- Bleu clair -->
+    <color name="igt_accent">#C62828</color>             <!-- Rouge -->
+    <color name="igt_secondary">#BF360C</color>          <!-- Orange foncé -->
+    
+    <!-- Couleurs pour le texte et les fonds -->
+    <color name="igt_text_primary">#212121</color>       <!-- Texte principal -->
+    <color name="igt_text_secondary">#757575</color>     <!-- Texte secondaire -->
+    <color name="igt_background">#F5F5F5</color>         <!-- Fond d'écran -->
+    <color name="igt_surface">#FFFFFF</color>            <!-- Surface des cartes -->
+    
+    <!-- Couleurs d'état -->
+    <color name="igt_success">#2E7D32</color>            <!-- Vert pour succès -->
+    <color name="igt_warning">#FF8F00</color>            <!-- Orange pour avertissement -->
+    <color name="igt_error">#C62828</color>              <!-- Rouge pour erreur -->
+</resources> 

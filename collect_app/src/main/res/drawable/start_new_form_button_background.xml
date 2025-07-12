@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/color_on_primary_low_emphasis">
+    android:color="?colorControlHighlight">
     <item>
         <shape android:shape="rectangle">
-            <corners android:radius="100dp" />
-            <solid android:color="?colorPrimary" />
+            <solid android:color="@color/igt_primary" />
+            <corners android:radius="8dp" />
         </shape>
     </item>
 </ripple>
