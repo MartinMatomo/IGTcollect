@@ -37,14 +37,22 @@ public class FormUpdateAndInstanceSubmitScheduler implements FormUpdateScheduler
             case MANUAL:
                 scheduler.cancelDeferred(getMatchExactlyTag(projectId));
                 scheduler.cancelDeferred(getAutoUpdateTag(projectId));
+                scheduler.cancelDeferred(getAutoDiscoveryTag(projectId));
                 break;
             case PREVIOUSLY_DOWNLOADED_ONLY:
                 scheduler.cancelDeferred(getMatchExactlyTag(projectId));
+                scheduler.cancelDeferred(getAutoDiscoveryTag(projectId));
                 scheduleAutoUpdate(periodInMilliseconds, projectId);
                 break;
             case MATCH_EXACTLY:
                 scheduler.cancelDeferred(getAutoUpdateTag(projectId));
+                scheduler.cancelDeferred(getAutoDiscoveryTag(projectId));
                 scheduleMatchExactly(periodInMilliseconds, projectId);
+                break;
+            case AUTO_DISCOVERY:
+                scheduler.cancelDeferred(getAutoUpdateTag(projectId));
+                scheduler.cancelDeferred(getMatchExactlyTag(projectId));
+                scheduleAutoDiscovery(periodInMilliseconds, projectId);
                 break;
         }
     }
@@ -61,10 +69,17 @@ public class FormUpdateAndInstanceSubmitScheduler implements FormUpdateScheduler
         scheduler.networkDeferredRepeat(getMatchExactlyTag(projectId), new SyncFormsTaskSpec(), periodInMilliseconds, inputData);
     }
 
+    private void scheduleAutoDiscovery(long periodInMilliseconds, String projectId) {
+        HashMap<String, String> inputData = new HashMap<>();
+        inputData.put(TaskData.DATA_PROJECT_ID, projectId);
+        scheduler.networkDeferredRepeat(getAutoDiscoveryTag(projectId), new AutoFormDiscoveryTaskSpec(), periodInMilliseconds, inputData);
+    }
+
     @Override
     public void cancelUpdates(String projectId) {
         scheduler.cancelDeferred(getAutoUpdateTag(projectId));
         scheduler.cancelDeferred(getMatchExactlyTag(projectId));
+        scheduler.cancelDeferred(getAutoDiscoveryTag(projectId));
     }
 
     @Override
@@ -117,5 +132,10 @@ public class FormUpdateAndInstanceSubmitScheduler implements FormUpdateScheduler
     @NotNull
     private String getAutoUpdateTag(String projectId) {
         return "serverPollingJob:" + projectId;
+    }
+
+    @NotNull
+    private String getAutoDiscoveryTag(String projectId) {
+        return "auto_discovery:" + projectId;
     }
 }

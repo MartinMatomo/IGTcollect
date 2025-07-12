@@ -18,16 +18,30 @@
     android:id="@+id/appBarLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:liftOnScrollTargetViewId="@+id/scrollable_container">
+    android:background="@drawable/modern_app_bar_background"
+    android:elevation="8dp"
+    android:stateListAnimator="@animator/app_bar_state_animator"
+    app:liftOnScrollTargetViewId="@+id/scrollable_container"
+    app:elevation="8dp"
+    app:liftOnScroll="true"
+    app:liftOnScrollColor="@color/colorSurfaceVariant">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:titleTextAppearance="@style/ModernToolbarTitle"
+            app:titleTextColor="@color/colorOnSurface"
+            app:contentInsetStart="16dp"
+            app:contentInsetEnd="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:title="Title" />
@@ -36,6 +50,8 @@
             android:id="@+id/progressBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

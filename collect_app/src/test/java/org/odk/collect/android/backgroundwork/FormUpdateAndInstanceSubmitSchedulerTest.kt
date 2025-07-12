@@ -12,12 +12,15 @@ import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoInteractions
 import org.odk.collect.android.TestSettingsProvider
 import org.odk.collect.async.Scheduler
+import org.odk.collect.settings.enums.FormUpdateMode.AUTO_DISCOVERY
 import org.odk.collect.settings.enums.FormUpdateMode.MATCH_EXACTLY
 import org.odk.collect.settings.enums.FormUpdateMode.PREVIOUSLY_DOWNLOADED_ONLY
 import org.odk.collect.settings.keys.ProjectKeys
 import org.odk.collect.settings.keys.ProjectKeys.KEY_FORM_UPDATE_MODE
 import org.odk.collect.settings.keys.ProjectKeys.KEY_PERIODIC_FORM_UPDATES_CHECK
+import org.robolectric.annotation.Config
 
+@Config(sdk = [30])
 @RunWith(AndroidJUnit4::class)
 class FormUpdateAndInstanceSubmitSchedulerTest {
 
@@ -81,6 +84,35 @@ class FormUpdateAndInstanceSubmitSchedulerTest {
             eq(3600000),
             eq(mapOf(TaskData.DATA_PROJECT_ID to "myProject"))
         )
+    }
+
+    @Test
+    fun `scheduleUpdates passes project id when scheduling auto discovery`() {
+        val generalSettings = settingsProvider.getUnprotectedSettings("myProject")
+
+        generalSettings.save(KEY_FORM_UPDATE_MODE, AUTO_DISCOVERY.getValue(application))
+        generalSettings.save(
+            KEY_PERIODIC_FORM_UPDATES_CHECK,
+            application.getString(org.odk.collect.strings.R.string.every_one_hour_value)
+        )
+
+        val manager = FormUpdateAndInstanceSubmitScheduler(scheduler, settingsProvider, application)
+
+        manager.scheduleUpdates("myProject")
+        verify(scheduler).networkDeferredRepeat(
+            eq("auto_discovery:myProject"),
+            any<AutoFormDiscoveryTaskSpec>(),
+            eq(3600000),
+            eq(mapOf(TaskData.DATA_PROJECT_ID to "myProject"))
+        )
+    }
+
+    @Test
+    fun `cancelUpdates cancels auto discovery for project`() {
+        val manager = FormUpdateAndInstanceSubmitScheduler(scheduler, settingsProvider, application)
+
+        manager.cancelUpdates("myProject")
+        verify(scheduler).cancelDeferred("auto_discovery:myProject")
     }
 
     @Test

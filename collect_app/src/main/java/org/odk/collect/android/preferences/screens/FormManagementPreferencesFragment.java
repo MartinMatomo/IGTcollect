@@ -120,6 +120,14 @@ public class FormManagementPreferencesFragment extends BaseProjectPreferencesFra
                     updateFrequency.setEnabled(true);
                 }
                 break;
+            case AUTO_DISCOVERY:
+                if (automaticDownload != null) {
+                    displayDisabled(automaticDownload, true);
+                }
+                if (updateFrequency != null) {
+                    updateFrequency.setEnabled(true);
+                }
+                break;
         }
     }
 

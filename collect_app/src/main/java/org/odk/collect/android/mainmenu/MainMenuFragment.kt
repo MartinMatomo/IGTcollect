@@ -71,7 +71,7 @@ class MainMenuFragment(
         currentProjectViewModel.currentProject.observe(viewLifecycleOwner) { project ->
             if (project != null) {
                 requireActivity().invalidateOptionsMenu()
-                requireActivity().title = project.name
+                requireActivity().title = getString(string.collect_app_name)
             }
         }
 

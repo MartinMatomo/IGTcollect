@@ -11,11 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import org.odk.collect.android.R
 import org.odk.collect.android.activities.FormMapActivity
 import org.odk.collect.android.formmanagement.FormFillingIntentFactory
+import org.odk.collect.android.formmanagement.FormsDataService
 import org.odk.collect.android.injection.DaggerUtils
 import org.odk.collect.android.preferences.dialogs.ServerAuthDialogFragment
 import org.odk.collect.androidshared.ui.DialogFragmentUtils
 import org.odk.collect.androidshared.ui.ObviousProgressBar
 import org.odk.collect.androidshared.ui.SnackbarUtils
+import org.odk.collect.androidshared.ui.ToastUtils
 import org.odk.collect.async.network.NetworkStateProvider
 import org.odk.collect.lists.EmptyListView
 import org.odk.collect.lists.RecyclerViewUtils
@@ -35,9 +37,15 @@ class BlankFormListActivity : LocalizedActivity(), OnFormItemClickListener {
     @Inject
     lateinit var permissionsProvider: PermissionsProvider
 
+    @Inject
+    lateinit var formsDataService: FormsDataService
+
     private val viewModel: BlankFormListViewModel by viewModels { viewModelFactory }
 
     private val adapter: BlankFormListAdapter = BlankFormListAdapter(this)
+
+    private var hasTriggeredAutoDownload = false
+    private var hasTriggeredUpdateCheck = false
 
     private val formLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -57,10 +65,17 @@ class BlankFormListActivity : LocalizedActivity(), OnFormItemClickListener {
 
         val list = findViewById<RecyclerView>(R.id.form_list)
         list.layoutManager = LinearLayoutManager(this)
-        list.addItemDecoration(RecyclerViewUtils.verticalLineDivider(this))
+         list.addItemDecoration(RecyclerViewUtils.verticalLineDivider(this))
         list.adapter = adapter
 
         initObservers()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Réinitialise les flags pour permettre une nouvelle vérification à chaque session
+        hasTriggeredAutoDownload = false
+        hasTriggeredUpdateCheck = false
     }
 
     override fun onFormClick(formUri: Uri) {
@@ -112,6 +127,9 @@ class BlankFormListActivity : LocalizedActivity(), OnFormItemClickListener {
                 if (forms.isEmpty()) View.VISIBLE else View.GONE
 
             adapter.setData(forms)
+
+            // Déclenche automatiquement le téléchargement si aucun formulaire n'est présent
+            triggerAutoDownloadIfNeeded(forms)
         }
 
         viewModel.isAuthenticationRequired().observe(this) { authenticationRequired ->
@@ -125,6 +143,52 @@ class BlankFormListActivity : LocalizedActivity(), OnFormItemClickListener {
                     ServerAuthDialogFragment::class.java,
                     supportFragmentManager
                 )
+            }
+        }
+    }
+
+    private fun triggerAutoDownloadIfNeeded(forms: List<BlankFormListItem>) {
+        // Ne déclenche le téléchargement automatique que si :
+        // 1. Aucun formulaire n'est présent
+        // 2. On n'a pas encore déclenché le téléchargement automatique
+        // 3. On n'est pas en train de synchroniser
+        // 4. Une connexion réseau est disponible
+        if (forms.isEmpty() && 
+            !hasTriggeredAutoDownload && 
+            viewModel.isLoading.value == false &&
+            networkStateProvider.isDeviceOnline) {
+            
+            hasTriggeredAutoDownload = true
+            
+            ToastUtils.showShortToast(getString(org.odk.collect.strings.R.string.auto_discovering_forms))
+            
+            viewModel.autoDiscoverAndDownloadForms().observe(this) { success: Boolean ->
+                if (success) {
+                    ToastUtils.showShortToast(getString(org.odk.collect.strings.R.string.forms_download_succeeded))
+                } else {
+                    ToastUtils.showShortToast(getString(org.odk.collect.strings.R.string.forms_download_failed))
+                    // Permet de re-essayer lors du prochain accès si ça a échoué
+                    hasTriggeredAutoDownload = false
+                }
+            }
+        }
+        // Si des formulaires sont présents, vérifier automatiquement les mises à jour
+        else if (forms.isNotEmpty() && 
+                 !hasTriggeredUpdateCheck && 
+                 viewModel.isLoading.value == false &&
+                 networkStateProvider.isDeviceOnline) {
+            
+            hasTriggeredUpdateCheck = true
+            
+            ToastUtils.showShortToast(getString(org.odk.collect.strings.R.string.checking_for_updates))
+            
+            viewModel.checkAndDownloadUpdates().observe(this) { success: Boolean ->
+                if (success) {
+                    ToastUtils.showShortToast(getString(org.odk.collect.strings.R.string.forms_update_check_completed))
+                } else {
+                    // Silencieux en cas d'échec pour ne pas déranger si pas de mises à jour
+                    hasTriggeredUpdateCheck = false
+                }
             }
         }
     }

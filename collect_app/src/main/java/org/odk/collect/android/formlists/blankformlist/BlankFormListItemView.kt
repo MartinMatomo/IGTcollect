@@ -16,6 +16,9 @@ class BlankFormListItemView(context: Context) : FrameLayout(context) {
     fun setItem(item: BlankFormListItem) {
         binding.formTitle.text = item.formName
 
+        // Set form initial (first 3 characters of form name)
+        binding.formInitial.text = item.formName.take(3).uppercase()
+
         binding.formVersion.text =
             binding.root.context.getString(
                 string.version_number,

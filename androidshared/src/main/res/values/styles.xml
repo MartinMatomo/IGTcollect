@@ -6,4 +6,12 @@
         <item name="android:paddingTop">@dimen/margin_extra_small</item>
         <item name="android:paddingBottom">@dimen/margin_extra_small</item>
     </style>
+
+    <style name="ModernToolbarTitle" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/colorOnSurface</item>
+    </style>
 </resources>

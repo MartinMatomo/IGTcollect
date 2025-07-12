@@ -16,6 +16,7 @@ import org.odk.collect.android.application.initialization.ApplicationInitializer
 import org.odk.collect.android.application.initialization.ExistingProjectMigrator;
 import org.odk.collect.android.audio.AudioRecordingControllerFragment;
 import org.odk.collect.android.audio.AudioRecordingErrorDialogFragment;
+import org.odk.collect.android.backgroundwork.AutoFormDiscoveryTaskSpec;
 import org.odk.collect.android.backgroundwork.AutoUpdateTaskSpec;
 import org.odk.collect.android.backgroundwork.SendFormsTaskSpec;
 import org.odk.collect.android.backgroundwork.SyncFormsTaskSpec;
@@ -196,6 +197,8 @@ public interface AppDependencyComponent {
     void inject(ExperimentalPreferencesFragment experimentalPreferencesFragment);
 
     void inject(AutoUpdateTaskSpec autoUpdateTaskSpec);
+
+    void inject(AutoFormDiscoveryTaskSpec autoFormDiscoveryTaskSpec);
 
     void inject(ServerAuthDialogFragment serverAuthDialogFragment);
 

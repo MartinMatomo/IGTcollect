@@ -178,11 +178,13 @@ the specific language governing permissions and limitations under the License. -
         <item>@string/manual</item>
         <item>@string/previously_downloaded_only</item>
         <item>@string/match_exactly</item>
+        <item>@string/auto_discovery</item>
     </string-array>
     <string-array name="form_update_mode_values">
         <item>@string/form_update_mode_manual</item>
         <item>@string/form_update_mode_previously_downloaded</item>
         <item>@string/form_update_mode_match_exactly</item>
+        <item>@string/form_update_mode_auto_discovery</item>
     </string-array>
     
     <string-array name="project_colors">

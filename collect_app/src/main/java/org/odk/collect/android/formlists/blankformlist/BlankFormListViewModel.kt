@@ -86,6 +86,32 @@ class BlankFormListViewModel(
         return result
     }
 
+    fun autoDiscoverAndDownloadForms(): LiveData<Boolean> {
+        val result = MutableLiveData<Boolean>()
+        scheduler.immediate(
+            {
+                formsDataService.autoDiscoverAndDownloadForms(projectId)
+            },
+            { value: Boolean ->
+                result.value = value
+            }
+        )
+        return result
+    }
+
+    fun checkAndDownloadUpdates(): LiveData<Boolean> {
+        val result = MutableLiveData<Boolean>()
+        scheduler.immediate(
+            {
+                formsDataService.autoDiscoverAndDownloadForms(projectId)
+            },
+            { value: Boolean ->
+                result.value = value
+            }
+        )
+        return result
+    }
+
     fun isMatchExactlyEnabled(): Boolean {
         return generalSettings.getFormUpdateMode(application) == FormUpdateMode.MATCH_EXACTLY
     }

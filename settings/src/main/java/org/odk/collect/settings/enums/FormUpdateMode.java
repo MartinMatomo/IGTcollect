@@ -6,7 +6,8 @@ public enum FormUpdateMode implements StringIdEnum {
 
     MANUAL(R.string.form_update_mode_manual),
     PREVIOUSLY_DOWNLOADED_ONLY(R.string.form_update_mode_previously_downloaded),
-    MATCH_EXACTLY(R.string.form_update_mode_match_exactly);
+    MATCH_EXACTLY(R.string.form_update_mode_match_exactly),
+    AUTO_DISCOVERY(R.string.form_update_mode_auto_discovery);
 
     private final int string;
 

@@ -94,6 +94,54 @@ class FormsDataService(
     }
 
     /**
+     * Automatise complètement la découverte et le téléchargement des formulaires.
+     * Cette méthode lance automatiquement la recherche de formulaires sur le serveur,
+     * vérifie les versions et télécharge tous les formulaires nouveaux ou mis à jour.
+     */
+    fun autoDiscoverAndDownloadForms(projectId: String): Boolean {
+        val projectDependencies = projectDependencyModuleFactory.create(projectId)
+        return projectDependencies.formsLock.withLock { acquiredLock ->
+            if (acquiredLock) {
+                startSync(projectId)
+                syncWithStorage(projectId)
+
+                val serverFormsDetailsFetcher = serverFormsDetailsFetcher(projectDependencies)
+                val formDownloader = formDownloader(projectDependencies, clock)
+
+                try {
+                    // Récupère tous les formulaires disponibles sur le serveur
+                    val serverForms: List<ServerFormDetails> = serverFormsDetailsFetcher.fetchFormDetails()
+                    
+                    // Identifie les formulaires à télécharger (nouveaux ou mis à jour)
+                    val formsToDownload = serverForms.filter { serverForm ->
+                        serverForm.isNotOnDevice || serverForm.isUpdated
+                    }
+
+                    if (formsToDownload.isNotEmpty()) {
+                        // Télécharge automatiquement tous les formulaires identifiés
+                        val results = ServerFormUseCases.downloadForms(
+                            formsToDownload,
+                            formDownloader
+                        )
+
+                        // Notifie l'utilisateur des résultats
+                        notifier.onUpdatesDownloaded(results, projectId)
+                    }
+
+                    update(projectId)
+                    finishSyncWithServer(projectId, null)
+                    true
+                } catch (e: FormSourceException) {
+                    finishSyncWithServer(projectId, e)
+                    false
+                }
+            } else {
+                false
+            }
+        }
+    }
+
+    /**
      * Downloads updates for the project's already downloaded forms. If Automatic download is
      * disabled the user will just be notified that there are updates available.
      */

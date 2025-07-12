@@ -126,7 +126,8 @@
           "enum": [
             "manual",
             "previously_downloaded",
-            "match_exactly"
+            "match_exactly",
+            "auto_discovery"
           ]
         },
         "periodic_form_updates_check": {
