@@ -685,7 +685,16 @@
     <string name="uploading_data">Sending Form</string>
 
     <string name="noselect_error">Sorry, you have not selected any forms!</string>
-    <string name="no_connection">No network connection available</string>
+    <string name="no_connection">No internet connection</string>
+    <string name="got_it">Got it</string>
+    <string name="dont_show_again">Don\'t show again</string>
+    <string name="no_connection_form_download_explanation">
+    To ensure that your forms are up to date and to avoid potential bugs caused by outdated or incorrect versions, it is recommended to have an internet connection to check for updates before starting to fill them out. If updates are available, they will be downloaded automatically, allowing you to continue with the most recent versions.
+
+    However, if you are confident that your local forms are up to date, you can proceed without an internet connection. You can work offline and submit your completed forms once you reconnect.
+
+    Thank you.
+</string>
 
     <string name="sending_items">Sending %1$s of %2$s form(s)</string>
     <string name="send_selected_data">Send Selected</string>

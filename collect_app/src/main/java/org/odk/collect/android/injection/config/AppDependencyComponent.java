@@ -35,6 +35,7 @@ import org.odk.collect.android.formentry.saving.SaveAnswerFileErrorDialogFragmen
 import org.odk.collect.android.formentry.saving.SaveFormProgressDialogFragment;
 import org.odk.collect.android.formhierarchy.FormHierarchyFragmentHostActivity;
 import org.odk.collect.android.formlists.blankformlist.BlankFormListActivity;
+import org.odk.collect.android.formlists.blankformlist.NoConnectionDialogFragment;
 import org.odk.collect.android.formmanagement.OpenRosaClientProvider;
 import org.odk.collect.android.formmanagement.FormsDataService;
 import org.odk.collect.android.fragments.BarCodeScannerFragment;
@@ -263,6 +264,8 @@ public interface AppDependencyComponent {
     void inject(DownloadFormListTask downloadFormListTask);
 
     void inject(FormHierarchyFragmentHostActivity formHierarchyFragmentHostActivity);
+
+    void inject(NoConnectionDialogFragment noConnectionDialogFragment);
 
     OpenRosaHttpInterface openRosaHttpInterface();
 

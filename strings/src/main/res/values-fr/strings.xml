@@ -1156,4 +1156,16 @@
   <string name="newer_finalized_edit_found_dialog_positive_button">Modifier la dernière version</string>
   <!--Text for the snackbar shown when editing of a finalized form begins-->
   <string name="finalized_form_edit_started">Vous êtes en mode d\'édition. Appuyez sur une question pour la modifier.</string>
+
+  <string name="no_connection_form_download_explanation">
+    Afin de vous assurer que vos formulaires sont bien à jour et d\'éviter d\'éventuels bugs liés à des erreurs dans les anciens formulaires, il est recommandé de disposer d\'une connexion Internet pour vérifier les mises à jour avant de commencer à les remplir. Si des mises à jour sont disponibles, elles seront automatiquement téléchargées, et vous pourrez alors continuer avec des formulaires à jour.
+
+    Cependant, si vous êtes certain que vos formulaires locaux sont à jour, vous pouvez poursuivre sans connexion Internet. Il est tout à fait possible de travailler hors ligne et d\'envoyer les formulaires remplis une fois reconnecté.
+
+    Merci.
+</string>
+
+<string name="got_it">J\'ai compris</string>
+    <string name="dont_show_again">Ne plus afficher ce message</string>
+
 </resources>

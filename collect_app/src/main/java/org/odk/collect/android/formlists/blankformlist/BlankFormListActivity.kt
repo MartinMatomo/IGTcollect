@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.odk.collect.android.R
@@ -24,6 +25,7 @@ import org.odk.collect.lists.RecyclerViewUtils
 import org.odk.collect.permissions.PermissionListener
 import org.odk.collect.permissions.PermissionsProvider
 import org.odk.collect.strings.localization.LocalizedActivity
+import org.odk.collect.settings.SettingsProvider
 import javax.inject.Inject
 
 class BlankFormListActivity : LocalizedActivity(), OnFormItemClickListener {
@@ -39,6 +41,9 @@ class BlankFormListActivity : LocalizedActivity(), OnFormItemClickListener {
 
     @Inject
     lateinit var formsDataService: FormsDataService
+
+    @Inject
+    lateinit var settingsProvider: SettingsProvider
 
     private val viewModel: BlankFormListViewModel by viewModels { viewModelFactory }
 
@@ -147,22 +152,64 @@ class BlankFormListActivity : LocalizedActivity(), OnFormItemClickListener {
         }
     }
 
+    private fun showFormDownloadProgressDialog(title: String, message: String) {
+        val progressDialog = FormDownloadProgressDialogFragment()
+        progressDialog.setTitle(title)
+        progressDialog.setMessage(message)
+        DialogFragmentUtils.showIfNotShowing(
+            progressDialog,
+            "FormDownloadProgressDialog",
+            supportFragmentManager
+        )
+    }
+
+    private fun dismissFormDownloadProgressDialog() {
+        DialogFragmentUtils.dismissDialog(
+            "FormDownloadProgressDialog",
+            supportFragmentManager
+        )
+    }
+
     private fun triggerAutoDownloadIfNeeded(forms: List<BlankFormListItem>) {
-        // Ne déclenche le téléchargement automatique que si :
-        // 1. Aucun formulaire n'est présent
-        // 2. On n'a pas encore déclenché le téléchargement automatique
-        // 3. On n'est pas en train de synchroniser
-        // 4. Une connexion réseau est disponible
+        // Vérifier d'abord la connexion internet et afficher le dialogue informatif si nécessaire
+        if (!networkStateProvider.isDeviceOnline) {
+            // Afficher le dialogue informatif pour l'absence de connexion dans tous les cas
+            if ((!hasTriggeredAutoDownload && forms.isEmpty()) || 
+                (!hasTriggeredUpdateCheck && forms.isNotEmpty())) {
+                
+                // Vérifier si l'utilisateur n'a pas coché "NE PLUS AFFICHER CE MESSAGE"
+                if (NoConnectionDialogFragment.shouldShowDialog(settingsProvider)) {
+                    DialogFragmentUtils.showIfNotShowing(
+                        NoConnectionDialogFragment.newInstance(),
+                        "NoConnectionDialog",
+                        supportFragmentManager
+                    )
+                }
+                
+                // Marquer les flags pour éviter de re-afficher le dialogue
+                hasTriggeredAutoDownload = true
+                hasTriggeredUpdateCheck = true
+            }
+            return
+        }
+        
+        // Avec connexion internet - gérer le téléchargement automatique
         if (forms.isEmpty() && 
             !hasTriggeredAutoDownload && 
-            viewModel.isLoading.value == false &&
-            networkStateProvider.isDeviceOnline) {
+            viewModel.isLoading.value == false) {
             
             hasTriggeredAutoDownload = true
             
-            ToastUtils.showShortToast(getString(org.odk.collect.strings.R.string.auto_discovering_forms))
+            // Afficher le dialogue de progression
+            showFormDownloadProgressDialog(
+                getString(org.odk.collect.strings.R.string.downloading_data),
+                getString(org.odk.collect.strings.R.string.auto_discovering_forms)
+            )
             
             viewModel.autoDiscoverAndDownloadForms().observe(this) { success: Boolean ->
+                // Fermer le dialogue
+                dismissFormDownloadProgressDialog()
+                
                 if (success) {
                     ToastUtils.showShortToast(getString(org.odk.collect.strings.R.string.forms_download_succeeded))
                 } else {
@@ -175,14 +222,20 @@ class BlankFormListActivity : LocalizedActivity(), OnFormItemClickListener {
         // Si des formulaires sont présents, vérifier automatiquement les mises à jour
         else if (forms.isNotEmpty() && 
                  !hasTriggeredUpdateCheck && 
-                 viewModel.isLoading.value == false &&
-                 networkStateProvider.isDeviceOnline) {
+                 viewModel.isLoading.value == false) {
             
             hasTriggeredUpdateCheck = true
             
-            ToastUtils.showShortToast(getString(org.odk.collect.strings.R.string.checking_for_updates))
+            // Afficher le dialogue de progression pour les mises à jour
+            showFormDownloadProgressDialog(
+                getString(org.odk.collect.strings.R.string.downloading_data),
+                getString(org.odk.collect.strings.R.string.checking_for_updates)
+            )
             
             viewModel.checkAndDownloadUpdates().observe(this) { success: Boolean ->
+                // Fermer le dialogue
+                dismissFormDownloadProgressDialog()
+                
                 if (success) {
                     ToastUtils.showShortToast(getString(org.odk.collect.strings.R.string.forms_update_check_completed))
                 } else {
