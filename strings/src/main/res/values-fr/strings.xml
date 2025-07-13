@@ -1168,4 +1168,19 @@
 <string name="got_it">J\'ai compris</string>
     <string name="dont_show_again">Ne plus afficher ce message</string>
 
+    <string name="matricule_number" translatable="false">Numéro matricule</string>
+    <!-- Chaînes pour l'authentification d'identité -->
+    <string name="user_identity_setup_title" translatable="false">Configuration de l\'identité de l\'inspecteur ou contrôleur</string>
+    <string name="user_identity_setup_subtitle" translatable="false">Veuillez fournir vos informations d\'identité complet (Nom Postnom Prénom) et numéro matricule pour continuer. Vous devez vérifier que les informations sont correctes avant de continuer. Merci.</string>
+    <string name="identity_setup_info_message" translatable="false">Au moins un champ est requis. Ces informations seront utilisées pour vous identifier lors de la soumission des formulaires.</string>
+    <string name="identity_required_message" translatable="false">Veuillez renseigner au moins un champ d\'identité (nom d\'utilisateur ou numéro matricule)</string>
+    <string name="continue_button" translatable="false">Continuer</string>
+    <string name="nom_complet" translatable="false">Nom Postnom Prénom</string>
+
+    <string name="authentication_required">Authentification requise</string>
+    <string name="authentication_required_message">Veuillez renseigner vos informations d\'identité (Nom Postnom Prénom ou numéro matricule) pour continuer.</string>
+    <string name="invalid_phone_number">Numéro matricule invalide</string>
+    <string name="fix_errors_before_continuing">Veuillez corriger les erreurs avant de continuer</string>
+
+
 </resources>

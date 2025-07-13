@@ -91,6 +91,7 @@ import org.odk.collect.projects.ProjectsRepository;
 import org.odk.collect.settings.ODKAppSettingsImporter;
 import org.odk.collect.settings.SettingsProvider;
 import org.odk.collect.webpage.ExternalWebPageHelper;
+import org.odk.collect.android.authentication.UserAuthenticationActivity;
 
 import javax.inject.Singleton;
 
@@ -266,6 +267,8 @@ public interface AppDependencyComponent {
     void inject(FormHierarchyFragmentHostActivity formHierarchyFragmentHostActivity);
 
     void inject(NoConnectionDialogFragment noConnectionDialogFragment);
+
+    void inject(UserAuthenticationActivity userAuthenticationActivity);
 
     OpenRosaHttpInterface openRosaHttpInterface();
 

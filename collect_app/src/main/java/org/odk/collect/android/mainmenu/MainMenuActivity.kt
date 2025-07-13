@@ -8,6 +8,7 @@ import org.odk.collect.android.R
 import org.odk.collect.android.activities.ActivityUtils
 import org.odk.collect.android.activities.CrashHandlerActivity
 import org.odk.collect.android.activities.FirstLaunchActivity
+import org.odk.collect.android.authentication.UserAuthenticationActivity
 import org.odk.collect.android.injection.DaggerUtils
 import org.odk.collect.android.projects.ProjectSettingsDialog
 import org.odk.collect.android.utilities.ThemeUtils
@@ -67,25 +68,43 @@ class MainMenuActivity : LocalizedActivity() {
             super.onCreate(null)
             ActivityUtils.startActivityAndCloseAllOthers(this, FirstLaunchActivity::class.java)
             return
-        } else {
-            this.supportFragmentManager.fragmentFactory = FragmentFactoryBuilder()
-                .forClass(PermissionsDialogFragment::class) {
-                    PermissionsDialogFragment(
-                        permissionsProvider,
-                        viewModelProvider[RequestPermissionsViewModel::class.java]
-                    )
-                }
-                .forClass(ProjectSettingsDialog::class) {
-                    ProjectSettingsDialog(viewModelFactory)
-                }
-                .forClass(MainMenuFragment::class) {
-                    MainMenuFragment(viewModelFactory, settingsProvider)
-                }
-                .build()
+        }
 
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.main_menu_activity)
-            lifecycle.addObserver(mdmConfigObserver)
+        // Vérifier l'authentification utilisateur
+        UserAuthenticationActivity.resetAuthenticationIfEmpty(settingsProvider)
+        if (!UserAuthenticationActivity.isUserAuthenticated(settingsProvider)) {
+            super.onCreate(null)
+            ActivityUtils.startActivityAndCloseAllOthers(this, UserAuthenticationActivity::class.java)
+            return
+        }
+
+        this.supportFragmentManager.fragmentFactory = FragmentFactoryBuilder()
+            .forClass(PermissionsDialogFragment::class) {
+                PermissionsDialogFragment(
+                    permissionsProvider,
+                    viewModelProvider[RequestPermissionsViewModel::class.java]
+                )
+            }
+            .forClass(ProjectSettingsDialog::class) {
+                ProjectSettingsDialog(viewModelFactory)
+            }
+            .forClass(MainMenuFragment::class) {
+                MainMenuFragment(viewModelFactory, settingsProvider)
+            }
+            .build()
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.main_menu_activity)
+        lifecycle.addObserver(mdmConfigObserver)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        
+        // Vérifier l'authentification chaque fois que l'utilisateur revient sur l'écran principal
+        UserAuthenticationActivity.resetAuthenticationIfEmpty(settingsProvider)
+        if (!UserAuthenticationActivity.isUserAuthenticated(settingsProvider)) {
+            ActivityUtils.startActivityAndCloseAllOthers(this, UserAuthenticationActivity::class.java)
         }
     }
 

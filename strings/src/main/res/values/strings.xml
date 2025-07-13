@@ -688,6 +688,13 @@
     <string name="no_connection">No internet connection</string>
     <string name="got_it">Got it</string>
     <string name="dont_show_again">Don\'t show again</string>
+    <string name="user_authentication_title">User Authentication</string>
+    <string name="user_authentication_description">Please provide your identity information to continue using the application. At least one field is required.</string>
+    <string name="continue_text">Continue</string>
+    <string name="authentication_required">Authentication Required</string>
+    <string name="authentication_required_message">Please fill in at least one field (username, phone number, or email) to continue.</string>
+    <string name="invalid_phone_number">Invalid phone number format</string>
+    <string name="fix_errors_before_continuing">Please fix the errors before continuing</string>
     <string name="no_connection_form_download_explanation">
     To ensure that your forms are up to date and to avoid potential bugs caused by outdated or incorrect versions, it is recommended to have an internet connection to check for updates before starting to fill them out. If updates are available, they will be downloaded automatically, allowing you to continue with the most recent versions.
 
@@ -1438,4 +1445,15 @@
     <string name="newer_finalized_edit_found_dialog_positive_button">Edit latest form</string>
     <!-- Text for the snackbar shown when editing of a finalized form begins -->
     <string name="finalized_form_edit_started">You are now editing this form. Tap on a question to start editing.</string>
+
+
+    <string name="matricule_number" translatable="false">Registration number</string>
+    <!-- Strings for identity authentication -->
+    <string name="user_identity_setup_title" translatable="false">Inspector or controller identity setup</string>
+    <string name="user_identity_setup_subtitle" translatable="false">Please provide your full identity information (Last Name, Middle Name, First Name) and registration number to continue. You must verify that the information is correct before proceeding. Thank you.</string>
+    <string name="identity_setup_info_message" translatable="false">At least one field is required. This information will be used to identify you when submitting forms.</string>
+    <string name="identity_required_message" translatable="false">Please fill in at least one identity field (username or registration number)</string>
+    <string name="continue_button" translatable="false">Continue</string>
+    <string name="nom_complet" translatable="false">Last Name Middle Name First Name</string>
+
 </resources>
