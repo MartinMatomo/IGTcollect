@@ -828,6 +828,7 @@
     <string name="maps">Maps</string>
     <!-- Subtext of a settings section -->
     <string name="maps_settings_subtext">Basemap, styles, layers</string>
+
     <!-- Title of a settings section -->
     <string name="form_management_preferences">Form management</string>
     <!-- Subtext of a settings section -->
@@ -1455,5 +1456,17 @@
     <string name="identity_required_message" translatable="false">Please fill in at least one identity field (username or registration number)</string>
     <string name="continue_button" translatable="false">Continue</string>
     <string name="nom_complet" translatable="false">Last Name Middle Name First Name</string>
+    
+    <!-- Profile Activity -->
+    <string name="profile_title">Profile</string>
+    <string name="user_interface">User Interface</string>
+    <string name="profile_maps">Maps</string>
+    <string name="about">About</string>
+    <string name="logout">Logout</string>
+    <string name="logout_confirmation_message">Are you sure you want to logout? You will need to authenticate again to access the app.</string>
+    <string name="not_specified">Not specified</string>
+    <string name="edit_profile">Edit profile</string>
+
+
 
 </resources>

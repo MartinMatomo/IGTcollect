@@ -23,8 +23,9 @@ import org.odk.collect.android.formentry.FormOpeningMode
 import org.odk.collect.android.formlists.blankformlist.BlankFormListActivity
 import org.odk.collect.android.formmanagement.FormFillingIntentFactory
 import org.odk.collect.android.instancemanagement.send.InstanceUploaderListActivity
+import org.odk.collect.android.profile.ProfileActivity
 import org.odk.collect.android.projects.ProjectIconView
-import org.odk.collect.android.projects.ProjectSettingsDialog
+import org.odk.collect.android.profile.ProfileSettingsDialog
 import org.odk.collect.android.utilities.ActionRegister
 import org.odk.collect.androidshared.data.consume
 import org.odk.collect.androidshared.ui.DialogFragmentUtils
@@ -147,7 +148,8 @@ class MainMenuFragment(
         }
         if (item.itemId == org.odk.collect.android.R.id.projects) {
             DialogFragmentUtils.showIfNotShowing(
-                ProjectSettingsDialog::class.java,
+                ProfileSettingsDialog::class.java,
+               //  ProjectSettingsDialog::class.java,
                 parentFragmentManager
             )
             return true
@@ -222,6 +224,7 @@ class MainMenuFragment(
             startActivity(Intent(requireContext(), DeleteFormsActivity::class.java))
         }
 
+
         mainMenuViewModel.sendableInstancesCount.observe(viewLifecycleOwner) { finalized: Int ->
             binding.sendData.setNumberOfForms(finalized)
         }
@@ -256,7 +259,7 @@ class MainMenuFragment(
         binding.viewSentForms.visibility =
             if (mainMenuViewModel.shouldViewSentFormButtonBeVisible()) View.VISIBLE else View.GONE
         binding.getForms.visibility =
-            if (mainMenuViewModel.shouldGetBlankFormButtonBeVisible()) View.VISIBLE else View.GONE
+            if (mainMenuViewModel.shouldGetBlankFormButtonBeVisible()) View.GONE else View.GONE
         binding.manageForms.visibility =
             if (mainMenuViewModel.shouldDeleteSavedFormButtonBeVisible()) View.VISIBLE else View.GONE
     }

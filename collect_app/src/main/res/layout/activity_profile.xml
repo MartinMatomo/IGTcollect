@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header Section avec avatar et informations utilisateur -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="?attr/colorPrimaryContainer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/user_login"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/circular_background"
+                    android:tint="#FFFF"
+                    android:contentDescription="Profile avatar" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_title"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:textColor="?attr/colorOnPrimaryContainer"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Informations utilisateur -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/nom_complet"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?attr/colorOnPrimaryContainer"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/username_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?attr/colorOnPrimaryContainer"
+                            android:gravity="end"
+                            tools:text="Jean Dupont" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/matricule_number"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?attr/colorOnPrimaryContainer"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/phone_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?attr/colorOnPrimaryContainer"
+                            android:gravity="end"
+                            tools:text="12345" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section Paramètres -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Interface utilisateur -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainer">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/user_interface_button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/user_interface"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:gravity="start|center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:icon="@drawable/ic_outline_settings_24"
+                app:iconGravity="start"
+                app:iconTint="?attr/colorOnSurface"
+                style="@style/Widget.Material3.Button.TextButton" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cartes -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainer">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/maps_button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                                        android:text="@string/profile_maps"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:gravity="start|center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:icon="@drawable/ic_outline_map_24"
+                app:iconGravity="start"
+                app:iconTint="?attr/colorOnSurface"
+                style="@style/Widget.Material3.Button.TextButton" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- À propos -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainer">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/about_button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/about"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:gravity="start|center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:icon="@drawable/ic_outline_info_24"
+                app:iconGravity="start"
+                app:iconTint="?attr/colorOnSurface"
+                style="@style/Widget.Material3.Button.TextButton" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Bouton de déconnexion -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/logout"
+            android:textAppearance="?attr/textAppearanceButton"
+            app:icon="@drawable/ic_outline_logout_24"
+            app:iconGravity="start"
+            app:cornerRadius="12dp"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:backgroundTint="?attr/colorErrorContainer"
+            android:textColor="?attr/colorOnErrorContainer"
+            app:iconTint="?attr/colorOnErrorContainer" />
+
+    </LinearLayout>
+
+</ScrollView> 

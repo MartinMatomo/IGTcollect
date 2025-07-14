@@ -211,7 +211,7 @@
   <string name="terrain">Terreny</string>
   <string name="hybrid">Híbrid</string>
   <string name="satellite">Satel·lit</string>
-  <string name="google_play_services_error_occured">No pot accedir a Google Maps. Teniu el servei instal·lat ?</string>
+  <string name="google_play_services_error_occured">No pot accedir a Google Maps. Teniu el servei installat ?</string>
   <!--Title for the offline layer section of settings-->
   <!--Label for the offline layer setting-->
   <!--Title for the screen that allows the user to select a offline layer for maps-->

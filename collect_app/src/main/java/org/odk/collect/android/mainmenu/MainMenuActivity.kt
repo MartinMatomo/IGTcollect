@@ -7,10 +7,15 @@ import androidx.lifecycle.ViewModelProvider
 import org.odk.collect.android.R
 import org.odk.collect.android.activities.ActivityUtils
 import org.odk.collect.android.activities.CrashHandlerActivity
+// Import conservé pour la compilation mais non utilisé
 import org.odk.collect.android.activities.FirstLaunchActivity
 import org.odk.collect.android.authentication.UserAuthenticationActivity
 import org.odk.collect.android.injection.DaggerUtils
 import org.odk.collect.android.projects.ProjectSettingsDialog
+import org.odk.collect.android.profile.ProfileSettingsDialog
+import org.odk.collect.android.utilities.DefaultProjectCreator
+import org.odk.collect.android.projects.ProjectsDataService
+import org.odk.collect.projects.ProjectsRepository
 import org.odk.collect.android.utilities.ThemeUtils
 import org.odk.collect.androidshared.ui.FragmentFactoryBuilder
 import org.odk.collect.crashhandler.CrashHandler
@@ -33,6 +38,12 @@ class MainMenuActivity : LocalizedActivity() {
 
     @Inject
     lateinit var mdmConfigObserver: MDMConfigObserver
+    
+    @Inject
+    lateinit var projectsRepository: ProjectsRepository
+    
+    @Inject
+    lateinit var projectsDataService: ProjectsDataService
 
     private lateinit var currentProjectViewModel: CurrentProjectViewModel
 
@@ -65,9 +76,13 @@ class MainMenuActivity : LocalizedActivity() {
         ThemeUtils(this).setDarkModeForCurrentProject()
 
         if (!currentProjectViewModel.hasCurrentProject()) {
-            super.onCreate(null)
-            ActivityUtils.startActivityAndCloseAllOthers(this, FirstLaunchActivity::class.java)
-            return
+            // Au lieu d'afficher FirstLaunchActivity, on crée automatiquement un projet par défaut
+            DefaultProjectCreator.createAndConfigureDefaultProject(
+                projectsRepository,
+                projectsDataService,
+                settingsProvider
+            )
+            // On continue normalement sans retourner
         }
 
         // Vérifier l'authentification utilisateur
@@ -87,6 +102,9 @@ class MainMenuActivity : LocalizedActivity() {
             }
             .forClass(ProjectSettingsDialog::class) {
                 ProjectSettingsDialog(viewModelFactory)
+            }
+            .forClass(ProfileSettingsDialog::class) {
+                ProfileSettingsDialog()
             }
             .forClass(MainMenuFragment::class) {
                 MainMenuFragment(viewModelFactory, settingsProvider)

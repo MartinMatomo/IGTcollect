@@ -32,31 +32,80 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profil"
+        android:text="@string/profile_title"
         app:layout_constraintBottom_toBottomOf="@id/close_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/close_icon" />
 
-    <org.odk.collect.android.projects.ProjectListItemView
-        android:id="@+id/current_project"
+    <!-- Conteneur pour les informations du profil -->
+    <LinearLayout
+        android:id="@+id/profile_info_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_extra_small"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="?attr/selectableItemBackground"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        app:layout_constraintTop_toBottomOf="@id/title">
 
+        <!-- Nom d'utilisateur -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nom_complet"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:textColor="?attr/colorPrimary"
+            />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Numéro matricule -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/matricule_number"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody1"/>
+
+    </LinearLayout>
+
+    <org.odk.collect.androidshared.ui.multiclicksafe.MultiClickSafeMaterialButton
+        android:id="@+id/edit_profile_button"
+        style="?materialButtonOutlinedIconStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/edit_profile"
+        app:icon="@drawable/ic_edit"
+        app:layout_constraintStart_toStartOf="@id/profile_info_container"
+        app:layout_constraintTop_toBottomOf="@id/profile_info_container" />
+        
     <org.odk.collect.androidshared.ui.multiclicksafe.MultiClickSafeMaterialButton
         android:id="@+id/general_settings_button"
         style="?materialButtonOutlinedIconStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="16dp"
         android:text="@string/settings"
+        android:visibility="gone"
         app:icon="@drawable/ic_baseline_settings_24"
-        app:layout_constraintStart_toStartOf="@id/current_project"
-        app:layout_constraintTop_toBottomOf="@id/current_project" />
+        app:layout_constraintStart_toEndOf="@id/edit_profile_button"
+        app:layout_constraintTop_toBottomOf="@id/profile_info_container" />
 
     <View
         android:id="@+id/top_divider"
@@ -64,26 +113,19 @@
         android:layout_height="1dp"
         android:layout_marginTop="@dimen/margin_extra_small"
         android:alpha="0.2"
+        android:visibility="gone"
         android:background="?colorOnSurface"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/general_settings_button" />
 
-    <ScrollView
-        android:id="@+id/project_list_container"
+    <!-- Espace vide pour maintenir la cohérence visuelle -->
+    <View
+        android:id="@+id/spacer"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toTopOf="@id/bottom_divider"
+        android:layout_height="40dp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@id/top_divider">
-
-        <LinearLayout
-            android:id="@+id/project_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@id/top_divider" />
 
     <View
         android:id="@+id/bottom_divider"
@@ -91,33 +133,19 @@
         android:layout_height="1dp"
         android:alpha="0.2"
         android:background="?colorOnSurface"
-        app:layout_constraintBottom_toTopOf="@id/add_project_button"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/logout_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spacer" />
 
     <org.odk.collect.androidshared.ui.multiclicksafe.MultiClickSafeMaterialButton
-        android:id="@+id/add_project_button"
+        android:id="@+id/logout_button"
         style="?borderlessButtonIconStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_extra_small"
-        android:text="@string/add_project"
-        android:visibility="gone"
-        app:icon="@drawable/ic_baseline_qr_code_scanner_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/about_button"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@id/guideline_start" />
-
-    <org.odk.collect.androidshared.ui.multiclicksafe.MultiClickSafeMaterialButton
-        android:id="@+id/about_button"
-        style="?borderlessButtonIconStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_standard"
-        android:text="@string/about_preferences"
-        app:icon="@drawable/ic_outline_info_24"
+        android:text="@string/logout"
+        app:icon="@drawable/ic_outline_logout_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
-        android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@id/add_project_button" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="@id/guideline_start" />
+
+</androidx.constraintlayout.widget.ConstraintLayout> 

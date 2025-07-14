@@ -64,6 +64,7 @@ import org.odk.collect.android.preferences.screens.UserInterfacePreferencesFragm
 import org.odk.collect.android.projects.ManualProjectCreatorDialog;
 import org.odk.collect.android.projects.ProjectResetter;
 import org.odk.collect.android.projects.ProjectSettingsDialog;
+import org.odk.collect.android.profile.ProfileSettingsDialog;
 import org.odk.collect.android.projects.ProjectsDataService;
 import org.odk.collect.android.projects.QrCodeProjectCreatorDialog;
 import org.odk.collect.android.storage.StoragePathProvider;
@@ -92,6 +93,8 @@ import org.odk.collect.settings.ODKAppSettingsImporter;
 import org.odk.collect.settings.SettingsProvider;
 import org.odk.collect.webpage.ExternalWebPageHelper;
 import org.odk.collect.android.authentication.UserAuthenticationActivity;
+import org.odk.collect.android.profile.ProfileActivity;
+import org.odk.collect.android.profile.SettingsNavigationActivity;
 
 import javax.inject.Singleton;
 
@@ -239,6 +242,7 @@ public interface AppDependencyComponent {
     void inject(AndroidShortcutsActivity androidShortcutsActivity);
 
     void inject(ProjectSettingsDialog projectSettingsDialog);
+    void inject(ProfileSettingsDialog profileSettingsDialog);
 
     void inject(ManualProjectCreatorDialog manualProjectCreatorDialog);
 
@@ -269,6 +273,10 @@ public interface AppDependencyComponent {
     void inject(NoConnectionDialogFragment noConnectionDialogFragment);
 
     void inject(UserAuthenticationActivity userAuthenticationActivity);
+    
+    void inject(ProfileActivity profileActivity);
+    
+    void inject(SettingsNavigationActivity settingsNavigationActivity);
 
     OpenRosaHttpInterface openRosaHttpInterface();
 

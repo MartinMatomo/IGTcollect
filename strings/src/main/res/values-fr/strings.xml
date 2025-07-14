@@ -91,7 +91,7 @@
   <!--Displayed below repeat names in a form's table of contents-->
   <string name="repeatable_group_label">Groupe répétitif</string>
   <string name="exit">Sortir</string>
-  <!--This sentence is used in the dialog for adding repeats and will be completed by a singular noun usually. Examples would be ‘Add “observation”?’ or ‘Add “Reading”?’. If the phrase doesn’t make sense in your language you can add a word like “new”, being careful of gender/plural.-->
+  <!--This sentence is used in the dialog for adding repeats and will be completed by a singular noun usually. Examples would be 'Add "observation"?' or 'Add "Reading"?'. If the phrase doesn't make sense in your language you can add a word like "new", being careful of gender/plural.-->
   <string name="add_repeat_question">Ajouter «%s» ?</string>
   <string name="add_repeat">Ajouter</string>
   <string name="add_another_menu">Ajouter un autre </string>
@@ -411,7 +411,7 @@
   <string name="dark" tools:ignore="UnusedResources">Foncé</string>
   <string name="outdoors" tools:ignore="UnusedResources">En exterieur</string>
   <string name="topographic">Topographique</string>
-  <string name="google_play_services_error_occured">Impossible d’accéder à Google Maps. Google Play Services est-il installé ?</string>
+  <string name="google_play_services_error_occured">Impossible d\'accéder à Google Maps. Google Play Services est-il installé ?</string>
   <string name="carto_map_style_positron">Positron</string>
   <string name="carto_map_style_dark_matter">Matière Sombre</string>
   <!--Title for the offline layer section of settings-->
@@ -1157,13 +1157,7 @@
   <!--Text for the snackbar shown when editing of a finalized form begins-->
   <string name="finalized_form_edit_started">Vous êtes en mode d\'édition. Appuyez sur une question pour la modifier.</string>
 
-  <string name="no_connection_form_download_explanation">
-    Afin de vous assurer que vos formulaires sont bien à jour et d\'éviter d\'éventuels bugs liés à des erreurs dans les anciens formulaires, il est recommandé de disposer d\'une connexion Internet pour vérifier les mises à jour avant de commencer à les remplir. Si des mises à jour sont disponibles, elles seront automatiquement téléchargées, et vous pourrez alors continuer avec des formulaires à jour.
-
-    Cependant, si vous êtes certain que vos formulaires locaux sont à jour, vous pouvez poursuivre sans connexion Internet. Il est tout à fait possible de travailler hors ligne et d\'envoyer les formulaires remplis une fois reconnecté.
-
-    Merci.
-</string>
+  <string name="no_connection_form_download_explanation">Afin de vous assurer que vos formulaires sont bien à jour et d\'éviter d\'éventuels bugs liés à des erreurs dans les anciens formulaires, il est recommandé de disposer d\'une connexion Internet pour vérifier les mises à jour avant de commencer à les remplir. Si des mises à jour sont disponibles, elles seront automatiquement téléchargées, et vous pourrez alors continuer avec des formulaires à jour.\n\nCependant, si vous êtes certain que vos formulaires locaux sont à jour, vous pouvez poursuivre sans connexion Internet. Il est tout à fait possible de travailler hors ligne et d\'envoyer les formulaires remplis une fois reconnecté.\n\nMerci.</string>
 
 <string name="got_it">J\'ai compris</string>
     <string name="dont_show_again">Ne plus afficher ce message</string>
@@ -1176,6 +1170,17 @@
     <string name="identity_required_message" translatable="false">Veuillez renseigner au moins un champ d\'identité (nom d\'utilisateur ou numéro matricule)</string>
     <string name="continue_button" translatable="false">Continuer</string>
     <string name="nom_complet" translatable="false">Nom Postnom Prénom</string>
+    
+    <!-- Activité Profil -->
+    <string name="profile_title">Profil</string>
+    <string name="user_interface">Interface utilisateur</string>
+    <string name="profile_maps">Cartes</string>
+    <string name="about">À propos</string>
+    <string name="logout">Déconnexion</string>
+    <string name="logout_confirmation_message">Êtes-vous sûr de vouloir vous déconnecter ? Vous devrez vous authentifier à nouveau pour accéder à l\'application.</string>
+    <string name="not_specified">Non spécifié</string>
+    <string name="edit_profile">Modifier le profil</string>
+    <string name="app_description">ODK Collect est un outil de collecte de données pour appareils Android.</string>
 
     <string name="authentication_required">Authentification requise</string>
     <string name="authentication_required_message">Veuillez renseigner vos informations d\'identité (Nom Postnom Prénom ou numéro matricule) pour continuer.</string>
