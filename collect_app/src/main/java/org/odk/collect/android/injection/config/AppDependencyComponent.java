@@ -92,9 +92,9 @@ import org.odk.collect.projects.ProjectsRepository;
 import org.odk.collect.settings.ODKAppSettingsImporter;
 import org.odk.collect.settings.SettingsProvider;
 import org.odk.collect.webpage.ExternalWebPageHelper;
-import org.odk.collect.android.authentication.UserAuthenticationActivity;
 import org.odk.collect.android.profile.ProfileActivity;
 import org.odk.collect.android.profile.SettingsNavigationActivity;
+import org.odk.collect.android.authentication.LoginActivity;
 
 import javax.inject.Singleton;
 
@@ -272,8 +272,8 @@ public interface AppDependencyComponent {
 
     void inject(NoConnectionDialogFragment noConnectionDialogFragment);
 
-    void inject(UserAuthenticationActivity userAuthenticationActivity);
-    
+    void inject(LoginActivity loginActivity);
+
     void inject(ProfileActivity profileActivity);
     
     void inject(SettingsNavigationActivity settingsNavigationActivity);

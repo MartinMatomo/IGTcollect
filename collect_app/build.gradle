@@ -233,6 +233,11 @@ configurations.all {
 dependencies {
     coreLibraryDesugaring libs.desugar
 
+    // OkHttp dependencies
+    implementation libs.okHttp
+    implementation libs.okHttpTls
+    implementation libs.okHttpDigest
+
     implementation project(':shared')
     implementation project(':androidshared')
     implementation project(':nbistubs')

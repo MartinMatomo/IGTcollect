@@ -55,7 +55,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nom_complet"
+            android:text="Noms"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             android:textColor="?attr/colorPrimary"
             />
@@ -77,10 +77,11 @@
             android:layout_marginBottom="4dp"/>
 
         <TextView
-            android:id="@+id/phone"
+            android:id="@+id/matricul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceBody1"/>
+
 
     </LinearLayout>
 
@@ -91,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="@string/edit_profile"
+        android:visibility="gone"
         app:icon="@drawable/ic_edit"
         app:layout_constraintStart_toStartOf="@id/profile_info_container"
         app:layout_constraintTop_toBottomOf="@id/profile_info_container" />

@@ -152,6 +152,10 @@ import dagger.Provides;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 
+import org.odk.collect.android.api.ApiClient;
+import org.odk.collect.android.api.AuthManager;
+import org.odk.collect.android.api.ApiConfig;
+
 /**
  * Add dependency providers here (annotated with @Provides)
  * for objects you need to inject
@@ -218,6 +222,17 @@ public class AppDependencyModule {
         return new SharedPreferencesSettingsProvider(context);
     }
 
+    @Provides
+    @Singleton
+    public ApiClient providesApiClient(ApiConfig apiConfig) {
+        return new ApiClient(apiConfig);
+    }
+
+    @Provides
+    @Singleton
+    public AuthManager providesAuthManager(Context context, SettingsProvider settingsProvider) {
+        return new AuthManager(context, settingsProvider);
+    }
 
     @Provides
     public InstallIDProvider providesInstallIDProvider(SettingsProvider settingsProvider) {
@@ -651,5 +666,11 @@ public class AppDependencyModule {
     @Provides
     public BarcodeScannerViewContainer.Factory providesBarcodeScannerViewFactory(SettingsProvider settingsProvider) {
         return new SettingsBarcodeScannerViewFactory(settingsProvider.getUnprotectedSettings());
+    }
+
+    @Provides
+    @Singleton
+    public ApiConfig providesApiConfig(SettingsProvider settingsProvider) {
+        return new ApiConfig(settingsProvider);
     }
 }

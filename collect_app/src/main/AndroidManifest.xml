@@ -104,7 +104,7 @@ the specific language governing permissions and limitations under the License.
         </activity>
 
         <activity
-            android:name=".authentication.UserAuthenticationActivity"
+            android:name=".authentication.LoginActivity"
             android:theme="@style/Theme.Collect"
             android:exported="false">
         </activity>

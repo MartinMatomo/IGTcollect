@@ -9,7 +9,6 @@ import org.odk.collect.android.activities.ActivityUtils
 import org.odk.collect.android.activities.CrashHandlerActivity
 // Import conservé pour la compilation mais non utilisé
 import org.odk.collect.android.activities.FirstLaunchActivity
-import org.odk.collect.android.authentication.UserAuthenticationActivity
 import org.odk.collect.android.injection.DaggerUtils
 import org.odk.collect.android.projects.ProjectSettingsDialog
 import org.odk.collect.android.profile.ProfileSettingsDialog
@@ -24,6 +23,9 @@ import org.odk.collect.permissions.PermissionsProvider
 import org.odk.collect.settings.SettingsProvider
 import org.odk.collect.strings.localization.LocalizedActivity
 import javax.inject.Inject
+import org.odk.collect.android.api.AuthManager
+import org.odk.collect.android.activities.startActivityAndCloseAllOthers
+import org.odk.collect.android.authentication.LoginActivity
 
 class MainMenuActivity : LocalizedActivity() {
 
@@ -44,6 +46,9 @@ class MainMenuActivity : LocalizedActivity() {
     
     @Inject
     lateinit var projectsDataService: ProjectsDataService
+    
+    @Inject
+    lateinit var authManager: AuthManager
 
     private lateinit var currentProjectViewModel: CurrentProjectViewModel
 
@@ -85,11 +90,10 @@ class MainMenuActivity : LocalizedActivity() {
             // On continue normalement sans retourner
         }
 
-        // Vérifier l'authentification utilisateur
-        UserAuthenticationActivity.resetAuthenticationIfEmpty(settingsProvider)
-        if (!UserAuthenticationActivity.isUserAuthenticated(settingsProvider)) {
+        // Vérifier l'authentification utilisateur avec le nouveau système d'API
+        if (!authManager.isAuthenticated()) {
             super.onCreate(null)
-            ActivityUtils.startActivityAndCloseAllOthers(this, UserAuthenticationActivity::class.java)
+            startActivityAndCloseAllOthers<LoginActivity>()
             return
         }
 
@@ -120,9 +124,8 @@ class MainMenuActivity : LocalizedActivity() {
         super.onResume()
         
         // Vérifier l'authentification chaque fois que l'utilisateur revient sur l'écran principal
-        UserAuthenticationActivity.resetAuthenticationIfEmpty(settingsProvider)
-        if (!UserAuthenticationActivity.isUserAuthenticated(settingsProvider)) {
-            ActivityUtils.startActivityAndCloseAllOthers(this, UserAuthenticationActivity::class.java)
+        if (!authManager.isAuthenticated()) {
+            startActivityAndCloseAllOthers<LoginActivity>()
         }
     }
 

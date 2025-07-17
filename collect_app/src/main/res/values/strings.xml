@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="matricule_number">Numéro Matricule</string>
+    <string name="login_hint">Matricule ou Email</string>
+    <string name="please_login">Veuillez vous authentifier avec votre matricule ou votre adresse email</string>
+    <string name="login">Se connecter</string>
+    <string name="login_failed">Échec de l\'authentification</string>
+    <string name="authenticating">Authentification en cours...</string>
+    <string name="network_error">Erreur de réseau</string>
+    <string name="required">Ce champ est requis</string>
+    <string name="invalid_input">Entrée invalide</string>
 </resources>

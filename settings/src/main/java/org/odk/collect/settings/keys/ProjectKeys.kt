@@ -44,11 +44,17 @@ object ProjectKeys {
 
     // form_metadata_preferences.xml
     const val KEY_METADATA_USERNAME = "metadata_username"
+
     const val KEY_METADATA_PHONENUMBER = "metadata_phonenumber"
+
+    const val KEY_METADATA_NAME = "metadata_name"
     const val KEY_METADATA_EMAIL = "metadata_email"
+    const val KEY_METADATA_MATRICUL = "metadata_matricul"
     const val KEY_FORM_METADATA = "form_metadata"
     const val KEY_BACKGROUND_LOCATION = "background_location"
     const val KEY_BACKGROUND_RECORDING = "background_recording"
+    const val KEY_METADATA_POSTNOM = "metadata_postnom"
+    const val KEY_METADATA_PRENOM = "metadata_prenom"
 
     // experimental_preferences.xml
     const val KEY_DEBUG_FILTERS = "experimental_debug_filters"

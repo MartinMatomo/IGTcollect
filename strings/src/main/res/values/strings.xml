@@ -1467,6 +1467,7 @@
     <string name="not_specified">Not specified</string>
     <string name="edit_profile">Edit profile</string>
 
-
+    <string name="required">This field is required</string>
+    <string name="invalid_input">Invalid input</string>
 
 </resources>

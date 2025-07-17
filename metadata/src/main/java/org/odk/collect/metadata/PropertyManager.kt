@@ -21,7 +21,7 @@ class PropertyManager(
 
         val generalSettings = settingsProvider.getUnprotectedSettings()
 
-        var username = generalSettings.getString(ProjectKeys.KEY_METADATA_USERNAME)
+        var username = generalSettings.getString(ProjectKeys.KEY_METADATA_MATRICUL)
         // Use the server username by default if the metadata username is not defined
         if (username.isNullOrBlank()) {
             username = settingsProvider.getUnprotectedSettings().getString(ProjectKeys.KEY_USERNAME)
